@@ -4,13 +4,13 @@ import json
 from pathlib import Path
 
 from scrapers.base import ListingScraper, SourceConfig
-from scrapers.sources.seed import SeedListingScraper
+from scrapers.sources.reddit import RedditThreadScraper
 
 ROOT = Path(__file__).resolve().parent
 SOURCES_DIR = ROOT / "sources"
 
 SCRAPER_TYPES: dict[str, type[ListingScraper]] = {
-    "seed": SeedListingScraper,
+    "reddit_thread": RedditThreadScraper,
 }
 
 

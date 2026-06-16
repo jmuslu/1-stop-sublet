@@ -4,7 +4,7 @@ export interface Listing {
   id: string;
   title: string;
   description: string;
-  price: number;
+  price: number | null;
   location: string;
   bedrooms: number;
   bathrooms: number;
@@ -13,6 +13,9 @@ export interface Listing {
   imageUrl: string;
   sourceUrl: string;
   sourceVettedUsers?: boolean;
+  sourceSubreddit?: string;
+  sourceThreadTitle?: string;
+  sourceAuthor?: string;
   amenities?: string[];
   roommatesTotal?: number;
   floor?: string;

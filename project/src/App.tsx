@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import type { ListingPlatform, SortOption } from './types/listing';
+import type { Listing, ListingPlatform, SortOption } from './types/listing';
 import generatedListings from './data/generatedListings.json';
 import Header from './components/Header';
 import FilterBar from './components/FilterBar';
@@ -10,7 +10,7 @@ function App() {
   const [selectedPlatform, setSelectedPlatform] = useState<ListingPlatform | 'all'>('all');
   const [selectedLocation, setSelectedLocation] = useState('all');
   const [sortBy, setSortBy] = useState<SortOption>('date-desc');
-  const listings = generatedListings;
+  const listings = generatedListings as Listing[];
 
   const locations = useMemo(() => {
     const uniqueLocations = new Set(listings.map((l) => l.location));
@@ -40,9 +40,9 @@ function App() {
         case 'date-asc':
           return new Date(a.dateListed).getTime() - new Date(b.dateListed).getTime();
         case 'price-desc':
-          return b.price - a.price;
+          return (b.price ?? -1) - (a.price ?? -1);
         case 'price-asc':
-          return a.price - b.price;
+          return (a.price ?? Number.MAX_SAFE_INTEGER) - (b.price ?? Number.MAX_SAFE_INTEGER);
         default:
           return 0;
       }

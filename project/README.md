@@ -28,6 +28,8 @@ Scrapers live in `scrapers/`.
 
 Each website can have its own config and parser without changing the React app. The frontend only needs the normalized JSON contract.
 
+The first live source is Reddit's r/NEU housing megathread. It uses Reddit's public Atom feed because unauthenticated Reddit JSON requests are frequently blocked. If Reddit rate-limits a scheduled run, the scraper keeps the last generated listing file instead of breaking the deploy.
+
 ## GitHub Pages Refresh
 
 The workflow at `.github/workflows/deploy.yml` builds and deploys the app on every push to `main`, on manual dispatch, and every 6 hours. That is the right fit for a no-backend version: scheduled rebuilds refresh the static JSON after scrapers pull from source sites.

@@ -12,3 +12,7 @@ To add a real source:
 4. Normalize every item to `NormalizedListing`, especially `sourceUrl`, `dateListed`, `price`, `location`, `amenities`, and `sourceVettedUsers`.
 
 Use one source per file. That keeps website-specific parsing, rate limits, selectors, and cleanup rules easy to swap without touching the React app.
+
+## Current Sources
+
+- `reddit_neu_housing.json` uses Reddit's public Atom feed for the r/NEU housing megathread. The JSON API is often blocked for unauthenticated requests, so the scraper intentionally uses RSS/Atom and keeps the previous generated data if Reddit rate-limits a scheduled build.

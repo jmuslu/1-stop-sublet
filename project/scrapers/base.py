@@ -18,7 +18,7 @@ class NormalizedListing:
     id: str
     title: str
     description: str
-    price: int
+    price: int | None
     location: str
     bedrooms: int
     bathrooms: float
@@ -27,6 +27,9 @@ class NormalizedListing:
     imageUrl: str
     sourceUrl: str
     sourceVettedUsers: bool
+    sourceSubreddit: str | None = None
+    sourceThreadTitle: str | None = None
+    sourceAuthor: str | None = None
     amenities: list[str] = field(default_factory=list)
     roommatesTotal: int | None = None
     floor: str | None = None
@@ -49,6 +52,9 @@ class NormalizedListing:
             "imageUrl": self.imageUrl,
             "sourceUrl": self.sourceUrl,
             "sourceVettedUsers": self.sourceVettedUsers,
+            "sourceSubreddit": self.sourceSubreddit,
+            "sourceThreadTitle": self.sourceThreadTitle,
+            "sourceAuthor": self.sourceAuthor,
             "amenities": self.amenities,
             "extraCosts": self.extraCosts,
         }

@@ -14,7 +14,11 @@ function ListingCard({ listing }: ListingCardProps) {
     });
   };
 
-  const formatPrice = (price: number) => {
+  const formatPrice = (price: number | null) => {
+    if (price === null) {
+      return 'Ask';
+    }
+
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
@@ -42,7 +46,10 @@ function ListingCard({ listing }: ListingCardProps) {
       <div className="listing-content">
         <div className="listing-header">
           <h3 className="listing-title">{listing.title}</h3>
-          <span className="listing-price">{formatPrice(listing.price)}/mo</span>
+          <span className="listing-price">
+            {formatPrice(listing.price)}
+            {listing.price !== null && '/mo'}
+          </span>
         </div>
         <p className="listing-location">{listing.location}</p>
         <p className="listing-description">{listing.description}</p>
@@ -62,6 +69,9 @@ function ListingCard({ listing }: ListingCardProps) {
           {listing.sourceVettedUsers !== undefined && (
             <span>{listing.sourceVettedUsers ? 'Vetted source' : 'Unvetted source'}</span>
           )}
+          {listing.sourceSubreddit && <span>{listing.sourceSubreddit}</span>}
+          {listing.sourceThreadTitle && <span>{listing.sourceThreadTitle}</span>}
+          {listing.sourceAuthor && <span>{listing.sourceAuthor}</span>}
         </div>
         {listing.amenities && listing.amenities.length > 0 && (
           <div className="listing-amenities">
