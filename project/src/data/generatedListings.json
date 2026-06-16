@@ -1,0 +1,56 @@
+[
+  {
+    "id": "seed-boston-1",
+    "title": "Furnished Room Near Northeastern",
+    "description": "Example normalized listing for the scraper pipeline. Replace with live source output once each source is connected.",
+    "price": 1450,
+    "location": "Fenway, Boston, MA",
+    "bedrooms": 1,
+    "bathrooms": 1.0,
+    "platform": "Seed Data",
+    "dateListed": "2026-06-16",
+    "imageUrl": "https://images.pexels.com/photos/1571462/pexels-photo-1571462.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "sourceUrl": "https://example.com/fenway-room",
+    "sourceVettedUsers": false,
+    "amenities": [
+      "Furnished",
+      "Laundry",
+      "Near Green Line"
+    ],
+    "extraCosts": [
+      "Utilities split monthly"
+    ],
+    "roommatesTotal": 3,
+    "floor": "3",
+    "parking": "Street parking",
+    "utilitiesNotes": "Heating and water included; electricity separate.",
+    "applianceNotes": "Recently updated fridge."
+  },
+  {
+    "id": "seed-boston-2",
+    "title": "Summer Studio Close to Cambridge",
+    "description": "Static fallback data keeps the app usable while source-specific scrapers are added.",
+    "price": 2100,
+    "location": "Allston, Boston, MA",
+    "bedrooms": 0,
+    "bathrooms": 1.0,
+    "platform": "Seed Data",
+    "dateListed": "2026-06-15",
+    "imageUrl": "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "sourceUrl": "https://example.com/allston-studio",
+    "sourceVettedUsers": false,
+    "amenities": [
+      "Studio",
+      "Furnished",
+      "Transit access"
+    ],
+    "extraCosts": [
+      "Sublet transfer fee possible"
+    ],
+    "roommatesTotal": 0,
+    "floor": "2",
+    "parking": "No dedicated parking",
+    "utilitiesNotes": "Ask lister about cooling.",
+    "applianceNotes": "Appliance age not listed."
+  }
+]
