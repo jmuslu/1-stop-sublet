@@ -28,7 +28,9 @@ Scrapers live in `scrapers/`.
 
 Each website can have its own config and parser without changing the React app. The frontend only needs the normalized JSON contract.
 
-The first live source is Reddit's r/NEU housing megathread. It uses Reddit's public Atom feed because unauthenticated Reddit JSON requests are frequently blocked. If Reddit rate-limits a scheduled run, the scraper keeps the last generated listing file instead of breaking the deploy.
+The first live source is Reddit's r/NEU housing megathread. It uses Reddit's public Atom feed because unauthenticated Reddit JSON requests are frequently blocked. If Reddit rate-limits a scheduled run, the scraper keeps the last generated listing file instead of breaking the deploy. The Atom feed does not expose full comment parent/child relationships, so the scraper filters for offer-style comments and de-duplicates repeated reposts by the same author.
+
+Optional fuzzy classification can use Gemini by setting `GEMINI_API_KEY` in the local environment or as a GitHub Actions secret. Deterministic rules run first, and Gemini is only used for unclear comments.
 
 ## GitHub Pages Refresh
 

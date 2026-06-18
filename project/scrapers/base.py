@@ -24,12 +24,14 @@ class NormalizedListing:
     bathrooms: float
     platform: str
     dateListed: str
-    imageUrl: str
+    imageUrl: str | None
     sourceUrl: str
     sourceVettedUsers: bool
     sourceSubreddit: str | None = None
     sourceThreadTitle: str | None = None
     sourceAuthor: str | None = None
+    sourceIntent: str | None = None
+    imageUrls: list[str] = field(default_factory=list)
     amenities: list[str] = field(default_factory=list)
     roommatesTotal: int | None = None
     floor: str | None = None
@@ -55,6 +57,8 @@ class NormalizedListing:
             "sourceSubreddit": self.sourceSubreddit,
             "sourceThreadTitle": self.sourceThreadTitle,
             "sourceAuthor": self.sourceAuthor,
+            "sourceIntent": self.sourceIntent,
+            "imageUrls": self.imageUrls,
             "amenities": self.amenities,
             "extraCosts": self.extraCosts,
         }

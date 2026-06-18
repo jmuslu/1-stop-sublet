@@ -10,12 +10,14 @@ export interface Listing {
   bathrooms: number;
   platform: ListingPlatform;
   dateListed: string;
-  imageUrl: string;
+  imageUrl: string | null;
   sourceUrl: string;
   sourceVettedUsers?: boolean;
   sourceSubreddit?: string;
   sourceThreadTitle?: string;
   sourceAuthor?: string;
+  sourceIntent?: string;
+  imageUrls?: string[];
   amenities?: string[];
   roommatesTotal?: number;
   floor?: string;

@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import html
+import json
+import os
 import re
 import urllib.error
 import urllib.request
@@ -16,6 +18,15 @@ class _TextExtractor(HTMLParser):
     def __init__(self) -> None:
         super().__init__()
         self.parts: list[str] = []
+        self.image_urls: list[str] = []
+        self.link_urls: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        values = dict(attrs)
+        if tag == "img" and values.get("src"):
+            self.image_urls.append(values["src"])
+        if tag == "a" and values.get("href"):
+            self.link_urls.append(values["href"])
 
     def handle_data(self, data: str) -> None:
         cleaned = data.strip()
@@ -41,16 +52,18 @@ class RedditThreadScraper(ListingScraper):
         thread_url = self.source.config["thread_url"].rstrip("/")
         thread_title = self.source.config.get("thread_title", "Housing megathread")
         subreddit = self.source.config.get("subreddit", "r/NEU")
-        default_image_url = self.source.config["default_image_url"]
 
         listings: list[NormalizedListing] = []
+        seen_listing_keys: set[str] = set()
+        seen_author_fingerprints: dict[str, list[set[str]]] = {}
         for entry in root.findall("atom:entry", ATOM_NS):
             link = self._entry_link(entry)
             if not link or link.rstrip("/") == thread_url:
                 continue
 
-            content = self._entry_text(entry)
-            if not self._looks_like_housing_post(content):
+            content, image_urls = self._entry_content(entry)
+            intent = self._classify_intent(content, has_images=bool(image_urls))
+            if intent != "offer":
                 continue
 
             author = self._entry_author(entry)
@@ -61,6 +74,14 @@ class RedditThreadScraper(ListingScraper):
             bathrooms = self._extract_bathrooms(content)
             title = self._build_title(content, price, location, author)
             amenities = self._extract_amenities(content, subreddit, thread_title)
+            listing_key = self._listing_key(author, title)
+            if listing_key in seen_listing_keys:
+                continue
+            fingerprint = self._listing_fingerprint(content)
+            if self._is_near_duplicate(author, fingerprint, seen_author_fingerprints):
+                continue
+            seen_listing_keys.add(listing_key)
+            seen_author_fingerprints.setdefault(author or "", []).append(fingerprint)
 
             listings.append(
                 NormalizedListing(
@@ -73,12 +94,14 @@ class RedditThreadScraper(ListingScraper):
                     bathrooms=bathrooms,
                     platform=self.source.name,
                     dateListed=posted_at,
-                    imageUrl=default_image_url,
+                    imageUrl=image_urls[0] if image_urls else None,
+                    imageUrls=image_urls,
                     sourceUrl=link,
                     sourceVettedUsers=self.source.vetted_users,
                     sourceSubreddit=subreddit,
                     sourceThreadTitle=thread_title,
                     sourceAuthor=author,
+                    sourceIntent=intent,
                     amenities=amenities,
                     roommatesTotal=self._extract_roommates(content),
                     parking=self._extract_parking(content),
@@ -119,23 +142,145 @@ class RedditThreadScraper(ListingScraper):
             return "1970-01-01"
         return node.text[:10]
 
-    def _entry_text(self, entry: ET.Element) -> str:
+    def _entry_content(self, entry: ET.Element) -> tuple[str, list[str]]:
         node = entry.find("atom:content", ATOM_NS)
         raw = node.text if node is not None and node.text else ""
         parser = _TextExtractor()
-        parser.feed(html.unescape(raw))
-        return re.sub(r"\s+", " ", parser.text()).strip()
+        decoded = html.unescape(raw)
+        parser.feed(decoded)
+        text = re.sub(r"\s+", " ", parser.text()).strip()
+        return text, self._extract_image_urls(decoded, parser)
 
-    def _looks_like_housing_post(self, text: str) -> bool:
-        lowered = text.lower()
-        include_terms = self.source.config.get("include_terms", [])
-        exclude_terms = self.source.config.get("exclude_terms", [])
-        if any(term.lower() in lowered for term in exclude_terms):
+    def _classify_intent(self, text: str, has_images: bool) -> str:
+        deterministic = self._classify_intent_with_rules(text, has_images)
+        if deterministic != "unclear":
+            return deterministic
+        return self._classify_intent_with_gemini(text) or "seeker"
+
+    def _classify_intent_with_rules(self, text: str, has_images: bool) -> str:
+        lowered = text.lower().replace("’", "'")
+        if any(term.lower() in lowered for term in self.source.config.get("exclude_terms", [])):
+            return "seeker"
+        if any(term.lower() in lowered for term in self.source.config.get("question_terms", [])):
+            return "question"
+        if any(term.lower() in lowered for term in self.source.config.get("seeker_terms", [])):
+            return "seeker"
+        if any(term.lower() in lowered for term in self.source.config.get("offer_terms", [])):
+            return "offer"
+        if has_images and any(term.lower() in lowered for term in self.source.config.get("include_terms", [])):
+            return "offer"
+        if any(term.lower() in lowered for term in self.source.config.get("include_terms", [])):
+            return "unclear"
+        return "seeker"
+
+    def _classify_intent_with_gemini(self, text: str) -> str | None:
+        api_key = os.environ.get("GEMINI_API_KEY")
+        if not api_key:
+            return None
+        prompt = (
+            "Classify this Reddit housing megathread comment. "
+            "Return exactly one word: offer, seeker, question, or irrelevant. "
+            "Use offer only when the writer appears to have a room/unit/spot available. "
+            f"Comment: {self._trim(text, 1200)}"
+        )
+        payload = json.dumps({"contents": [{"parts": [{"text": prompt}]}]}).encode("utf-8")
+        url = (
+            "https://generativelanguage.googleapis.com/v1beta/models/"
+            "gemini-1.5-flash-latest:generateContent"
+            f"?key={api_key}"
+        )
+        request = urllib.request.Request(
+            url,
+            data=payload,
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=15) as response:
+                raw = json.loads(response.read().decode("utf-8"))
+        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
+            print(f"Warning: Gemini classification skipped: {exc}")
+            return None
+        text_value = (
+            raw.get("candidates", [{}])[0]
+            .get("content", {})
+            .get("parts", [{}])[0]
+            .get("text", "")
+            .strip()
+            .lower()
+        )
+        if text_value.startswith("offer"):
+            return "offer"
+        if text_value.startswith("question"):
+            return "question"
+        if text_value.startswith("seeker") or text_value.startswith("irrelevant"):
+            return "seeker"
+        return None
+
+    def _extract_image_urls(self, raw_html: str, parser: _TextExtractor) -> list[str]:
+        candidates = parser.image_urls + parser.link_urls
+        candidates += re.findall(r"https?://[^\s\"'<>]+", raw_html)
+        image_urls: list[str] = []
+        for candidate in candidates:
+            cleaned = html.unescape(candidate).replace("&amp;", "&")
+            if self._is_image_url(cleaned) and cleaned not in image_urls:
+                image_urls.append(cleaned)
+        return image_urls[:6]
+
+    def _is_image_url(self, url: str) -> bool:
+        lowered = url.lower()
+        return (
+            "preview.redd.it/" in lowered
+            or "i.redd.it/" in lowered
+            or lowered.endswith((".jpg", ".jpeg", ".png", ".webp"))
+        )
+
+    def _listing_key(self, author: str | None, text: str) -> str:
+        normalized = re.sub(r"[^a-z0-9]+", " ", text.lower()).strip()
+        normalized = re.sub(r"\b\d{3}[-.\s]?\d{3}[-.\s]?\d{4}\b", "", normalized)
+        return f"{author or ''}:{normalized[:90]}"
+
+    def _listing_fingerprint(self, text: str) -> set[str]:
+        normalized = text.lower().replace("’", "'")
+        normalized = re.sub(r"\$?\b[0-9][0-9,]{1,5}\b(?:\s?\$)?", " ", normalized)
+        tokens = set(re.findall(r"\b[a-z][a-z]{3,}\b", normalized))
+        stop_words = {
+            "apartment",
+            "available",
+            "please",
+            "reach",
+            "room",
+            "rooms",
+            "sublet",
+            "subletting",
+        }
+        return tokens - stop_words
+
+    def _is_near_duplicate(
+        self,
+        author: str | None,
+        fingerprint: set[str],
+        seen_author_fingerprints: dict[str, list[set[str]]],
+    ) -> bool:
+        if len(fingerprint) < 6:
             return False
-        return any(term.lower() in lowered for term in include_terms)
+        for existing in seen_author_fingerprints.get(author or "", []):
+            overlap = len(fingerprint & existing)
+            union = len(fingerprint | existing)
+            if union and overlap / union >= 0.48:
+                return True
+        return False
 
     def _extract_price(self, text: str) -> int | None:
-        matches = re.findall(r"\$\s?([0-9][0-9,]{2,5})", text)
+        patterns = [
+            r"\$\s?([0-9][0-9,]{2,5})",
+            r"\b([0-9][0-9,]{2,5})\s?\$",
+            r"\b(?:rent|budget|price)\D{0,18}([0-9][0-9,]{2,5})\b",
+            r"\b([0-9][0-9,]{2,5})\s?(?:/mo|per month|monthly)\b",
+        ]
+        matches: list[str] = []
+        for pattern in patterns:
+            matches.extend(re.findall(pattern, text, re.IGNORECASE))
         if not matches:
             return None
         prices = [int(match.replace(",", "")) for match in matches]
@@ -225,7 +370,18 @@ class RedditThreadScraper(ListingScraper):
         return f"Reddit housing lead from {author or 'r/NEU'}"
 
     def _best_title_sentence(self, text: str) -> str:
-        generic = {"hi", "hi!", "hello", "hello!", "hey", "hey!"}
+        generic = {
+            "hi",
+            "hi!",
+            "hi everyone",
+            "hi everyone!",
+            "hello",
+            "hello!",
+            "hey",
+            "hey!",
+            "hey everyone",
+            "hey everyone!",
+        }
         sentences = re.split(r"(?<=[.!?])\s+", text)
         for sentence in sentences:
             cleaned = sentence.strip()

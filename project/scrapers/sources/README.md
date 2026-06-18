@@ -15,4 +15,4 @@ Use one source per file. That keeps website-specific parsing, rate limits, selec
 
 ## Current Sources
 
-- `reddit_neu_housing.json` uses Reddit's public Atom feed for the r/NEU housing megathread. The JSON API is often blocked for unauthenticated requests, so the scraper intentionally uses RSS/Atom and keeps the previous generated data if Reddit rate-limits a scheduled build.
+- `reddit_neu_housing.json` uses Reddit's public Atom feed for the r/NEU housing megathread. The JSON API is often blocked for unauthenticated requests, so the scraper intentionally uses RSS/Atom and keeps the previous generated data if Reddit rate-limits a scheduled build. It filters for available listing offers, drops seeker/question comments, and de-duplicates repeated reposts. Set `GEMINI_API_KEY` when you want optional LLM help on unclear comments.

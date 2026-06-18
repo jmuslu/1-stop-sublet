@@ -5,6 +5,8 @@ interface ListingCardProps {
 }
 
 function ListingCard({ listing }: ListingCardProps) {
+  const imageCount = listing.imageUrls?.length ?? (listing.imageUrl ? 1 : 0);
+
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', {
@@ -35,12 +37,21 @@ function ListingCard({ listing }: ListingCardProps) {
       aria-label={`Open ${listing.title} on ${listing.platform}`}
     >
       <div className="listing-image-container">
-        <img
-          src={listing.imageUrl}
-          alt={listing.title}
-          className="listing-image"
-          loading="lazy"
-        />
+        {listing.imageUrl ? (
+          <>
+            <img
+              src={listing.imageUrl}
+              alt={listing.title}
+              className="listing-image"
+              loading="lazy"
+            />
+            {imageCount > 1 && <span className="listing-photo-count">{imageCount} photos</span>}
+          </>
+        ) : (
+          <div className="listing-no-photo">
+            <span>No photos listed</span>
+          </div>
+        )}
         <span className="listing-platform-badge">{listing.platform}</span>
       </div>
       <div className="listing-content">

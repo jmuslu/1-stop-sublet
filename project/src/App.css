@@ -169,6 +169,18 @@ body {
   transform: scale(1.03);
 }
 
+.listing-no-photo {
+  align-items: center;
+  background: linear-gradient(135deg, #f7f7f4, #ecefe9);
+  color: var(--text-muted);
+  display: flex;
+  font-size: 13px;
+  font-weight: 600;
+  height: 100%;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
 .listing-platform-badge {
   position: absolute;
   top: 12px;
@@ -182,6 +194,18 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.3px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.listing-photo-count {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(26, 26, 26, 0.78);
+  color: #ffffff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .listing-content {
