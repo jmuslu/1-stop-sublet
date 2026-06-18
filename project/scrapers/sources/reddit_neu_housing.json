@@ -12,6 +12,8 @@
     "max_items": 75,
     "photo_attach_window": 8,
     "strong_offer_terms": [
+      "fully furnished summer sublet",
+      "lease takeover",
       "my apartment",
       "my bedroom",
       "my furnished room",
@@ -19,10 +21,14 @@
       "my room",
       "our apartment",
       "our place",
-      "sublet for my"
+      "someone to sublet my",
+      "summer lease takeover",
+      "sublet for my",
+      "take over my",
+      "take over our"
     ],
     "offer_terms": [
-      "available",
+      "accommodation available",
       "can pull",
       "have a vacancy",
       "have an off campus unit",
@@ -41,6 +47,7 @@
     "seeker_terms": [
       "anyone has",
       "anyone here has",
+      "assuming everyone here are neu students",
       "does anyone",
       "i am looking for",
       "i'm looking for",
@@ -48,6 +55,7 @@
       "im looking for",
       "in search of",
       "iso",
+      "looking for girls to join my roommate group",
       "looking for a furnished sublet",
       "looking for a long term rental",
       "looking for a place",
@@ -63,7 +71,6 @@
       "wanted"
     ],
     "question_terms": [
-      "?",
       "does that mean",
       "what if",
       "wondering if"

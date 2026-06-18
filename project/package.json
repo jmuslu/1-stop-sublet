@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "scrape": "python -m scrapers.run",
-    "build": "npm run scrape && tsc -b && vite build",
+    "eval:scrapers": "python -m scrapers.eval_reddit_rules",
+    "build": "npm run eval:scrapers && npm run scrape && tsc -b && vite build",
     "build:app": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"

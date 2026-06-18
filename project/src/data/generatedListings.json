@@ -128,36 +128,44 @@
     "parking": "Driveway access"
   },
   {
-    "id": "reddit-orlqbw5",
-    "title": "Private room in 3 Bedroom apartment.",
-    "description": "Private room in 3 Bedroom apartment. 2 other male Northeastern students. Available July and August, fully furnished Gym, laundry, security, in building. Less than a 5 minute walk to Northeastern, Berklee, Green and Orange line. $1500 per month. Message me with questions.",
-    "price": 1500,
-    "location": "Boston, MA",
-    "bedrooms": 3,
-    "bathrooms": 1,
+    "id": "reddit-oqbuglh",
+    "title": "$1,000 housing lead near Mission Hill",
+    "description": "Hey, I'm looking for a sublet for my furnished room the rest of the summer: - June 15th through August 31st (flexible with timeline) - $1,000/month, utilities included (1GB/s Fios internet) - Central AC, in-unit laundry, hardwood floors - Super close to Brigham Circle (Green Lin...",
+    "price": 1000,
+    "location": "Mission Hill, Boston, MA",
+    "bedrooms": 6,
+    "bathrooms": 3.0,
     "platform": "Reddit",
-    "dateListed": "2026-06-14",
-    "imageUrl": null,
-    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/orlqbw5/",
+    "dateListed": "2026-06-07",
+    "imageUrl": "https://preview.redd.it/leqpswxk4x5h1.jpeg?width=4032&format=pjpg&auto=webp&s=db8140770b49d6890d692fce3cceda41199329a8",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/oqbuglh/",
     "sourceVettedUsers": false,
     "sourceSubreddit": "r/NEU",
     "sourceThreadTitle": "NEU Housing Megathread",
-    "sourceAuthor": "/u/Cautious-Shop9699",
+    "sourceAuthor": "/u/Weird-Variation4671",
     "sourceIntent": "offer",
-    "imageUrls": [],
-    "availabilityLabel": null,
+    "imageUrls": [
+      "https://preview.redd.it/leqpswxk4x5h1.jpeg?width=4032&format=pjpg&auto=webp&s=db8140770b49d6890d692fce3cceda41199329a8",
+      "https://preview.redd.it/927bi96y4x5h1.jpeg?width=4032&format=pjpg&auto=webp&s=195db06b74960aef773636533dd3eae5ba4c5942"
+    ],
+    "availabilityLabel": "June 15th through August 31st",
     "availableFrom": null,
     "availableTo": null,
-    "termTags": [],
+    "termTags": [
+      "Summer"
+    ],
     "amenities": [
       "Reddit",
       "r/NEU",
       "Furnished",
       "Laundry",
-      "Gym",
-      "Housing megathread"
+      "Sublet",
+      "Roommate"
     ],
-    "extraCosts": []
+    "extraCosts": [
+      "Utilities mentioned"
+    ],
+    "utilitiesNotes": "Hey, I'm looking for a sublet for my furnished room the rest of the summer: - June 15th through August 31st (flexible with timeline) - $1,0..."
   },
   {
     "id": "reddit-oq35qnv",
@@ -197,17 +205,17 @@
     "utilitiesNotes": "Amenities: \u2705 All utilities included (heat, water, gas, trash, sewer) except electricity \ud83e\uddfa In unit laundry!"
   },
   {
-    "id": "reddit-opdi11q",
-    "title": "My roommate and I are looking for 2 students (girls only) to take over...",
-    "description": "Hi! My roommate and I are looking for 2 students (girls only) to take over our 2 bed spaces in a 2 Bed 2 Bath A Floor Plan apartment at LightView from July 1 to August 14, 2026. Both bed spaces are in the same room. Fully furnished, high floor, great view, and full access to Lig...",
+    "id": "reddit-oprb3b8",
+    "title": "\ud83d\udea8URGENT LOOKING FOR SUMMER 2 SUBLET\ud83d\udea8 Hi!",
+    "description": "\ud83d\udea8URGENT LOOKING FOR SUMMER 2 SUBLET\ud83d\udea8 Hi! My roommate and I are looking for 2 girls to take over our bed spaces or 4 boys to take entire apartment which is a 2 Bed 2 Bath A Floor Plan apartment at LightView from July 1 to August 14, 2026 (only students). Both bed spaces are in th...",
     "price": 1600,
     "location": "Boston, MA",
     "bedrooms": 2,
     "bathrooms": 2.0,
     "platform": "Reddit",
-    "dateListed": "2026-06-02",
+    "dateListed": "2026-06-04",
     "imageUrl": "https://preview.redd.it/db3r0wjj5b5h1.jpeg?width=1206&format=pjpg&auto=webp&s=58980fb68c59207e6f00b65c76102206db77008a",
-    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/opdi11q/",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/oprb3b8/",
     "sourceVettedUsers": false,
     "sourceSubreddit": "r/NEU",
     "sourceThreadTitle": "NEU Housing Megathread",
@@ -219,12 +227,91 @@
     "availabilityLabel": "July 1 to August 14",
     "availableFrom": null,
     "availableTo": null,
-    "termTags": [],
+    "termTags": [
+      "Summer 2"
+    ],
     "amenities": [
       "Reddit",
       "r/NEU",
       "Furnished",
       "Gym",
+      "Co-op term",
+      "Sublet"
+    ],
+    "extraCosts": [
+      "Utilities mentioned",
+      "Fees mentioned"
+    ],
+    "utilitiesNotes": "All utilities are included!"
+  },
+  {
+    "id": "reddit-op5eutx",
+    "title": "Looking for someone to sublet my studio apartment on St.",
+    "description": "Looking for someone to sublet my studio apartment on St. Stephen Street, just steps from Northeastern University and the Green Line. \u2022 Location: St. Stephen Street, Boston, MA \u2022 Rent: $2,550/month (negotiable) \u2022 Availability: September 1 \u2013 Late December 2026 (Fall Semester) \u2022 Ap...",
+    "price": 2550,
+    "location": "Boston, MA",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "platform": "Reddit",
+    "dateListed": "2026-06-01",
+    "imageUrl": "https://preview.redd.it/c3mzpu6j2p4h1.jpeg?width=4032&format=pjpg&auto=webp&s=dffb9614a520d6aee03c66b92bd586b99059f2d0",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/op5eutx/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/xiaosunmooni",
+    "sourceIntent": "offer",
+    "imageUrls": [
+      "https://preview.redd.it/c3mzpu6j2p4h1.jpeg?width=4032&format=pjpg&auto=webp&s=dffb9614a520d6aee03c66b92bd586b99059f2d0"
+    ],
+    "availabilityLabel": "Fall",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Fall"
+    ],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Furnished",
+      "Co-op term",
+      "Sublet",
+      "Housing megathread"
+    ],
+    "extraCosts": [
+      "Fees mentioned"
+    ]
+  },
+  {
+    "id": "reddit-op525ps",
+    "title": "$1,530 housing lead near Roxbury Crossing",
+    "description": "Hi all! I'm looking for someone to take over my sublet for Summer 2! The apartment is 34 Greenwich St in Roxbury Crossing. It'll be available from late June to August 31st, with a flexible move in date. It's a 5 minute walk right behind Lightview, so it's close to campus. The un...",
+    "price": 1530,
+    "location": "Roxbury Crossing, Boston, MA",
+    "bedrooms": 3,
+    "bathrooms": 2.0,
+    "platform": "Reddit",
+    "dateListed": "2026-06-01",
+    "imageUrl": "https://preview.redd.it/4ev893w7so4h1.png?width=768&format=png&auto=webp&s=5ef9f5061c744242c2915881cafb1e627446ffb1",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/op525ps/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/Garebear0525",
+    "sourceIntent": "offer",
+    "imageUrls": [
+      "https://preview.redd.it/4ev893w7so4h1.png?width=768&format=png&auto=webp&s=5ef9f5061c744242c2915881cafb1e627446ffb1"
+    ],
+    "availabilityLabel": "June to August",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Summer 2"
+    ],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Sublet",
       "Roommate",
       "Housing megathread"
     ],
@@ -264,6 +351,44 @@
     "roommatesTotal": 2
   },
   {
+    "id": "reddit-oo4k3nk",
+    "title": "$1,450 housing lead near Mission Hill",
+    "description": "\ud83c\udfe0 Private room available in a furnished 3 bed / 1 bath apartment near Northeastern University in Roxbury, Boston. \ud83d\udccd Location: 86 Hammond St, Roxbury, MA 02120 \ud83d\udcc5 Availability: June 20 \u2013 August 31, 2026 (Flexible move-in possible) \ud83d\udcb0 Rent: $1450/month Utilities can be discussed. \ud83d\udecf\ufe0f...",
+    "price": 1450,
+    "location": "Mission Hill, Boston, MA",
+    "bedrooms": 3,
+    "bathrooms": 1.0,
+    "platform": "Reddit",
+    "dateListed": "2026-05-27",
+    "imageUrl": null,
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/oo4k3nk/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/jayjung69",
+    "sourceIntent": "offer",
+    "imageUrls": [],
+    "availabilityLabel": "June 20 \u2013 August 31",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Summer"
+    ],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Furnished",
+      "Near campus",
+      "Co-op term",
+      "Roommate"
+    ],
+    "extraCosts": [
+      "Utilities mentioned"
+    ],
+    "roommatesTotal": 2,
+    "utilitiesNotes": "\ud83d\udccd Location: 86 Hammond St, Roxbury, MA 02120 \ud83d\udcc5 Availability: June 20 \u2013 August 31, 2026 (Flexible move-in possible) \ud83d\udcb0 Rent: $1450/month Util..."
+  },
+  {
     "id": "reddit-oo16zvc",
     "title": "I am subletting a place in Lightview for 1650 per month for a single ro...",
     "description": "I am subletting a place in Lightview for 1650 per month for a single room for girls only from 29th June to 31st August. Please dm me for more info.",
@@ -292,6 +417,44 @@
       "Housing megathread"
     ],
     "extraCosts": []
+  },
+  {
+    "id": "reddit-onzjodz",
+    "title": "$1,550 housing lead near Ruggles",
+    "description": "Hi! I\u2019m looking for a temporary subletter for my room from June 1 \u2013 Aug 31, 2026 (flexible on dates within that range). The apartment is located on Tremont Street near the Ruggles, Mass Ave, and Northeastern T stops, and is less than 5 minutes from campus. Apartment Details 4 be...",
+    "price": 1550,
+    "location": "Ruggles, Boston, MA",
+    "bedrooms": 4,
+    "bathrooms": 2.0,
+    "platform": "Reddit",
+    "dateListed": "2026-05-26",
+    "imageUrl": "https://preview.redd.it/av820ldk0i3h1.png?width=2000&format=png&auto=webp&s=3cb66c18cdb25aaf373e0973de9f2ee9931ae598",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/onzjodz/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/Creepy-Motor-4071",
+    "sourceIntent": "offer",
+    "imageUrls": [
+      "https://preview.redd.it/av820ldk0i3h1.png?width=2000&format=png&auto=webp&s=3cb66c18cdb25aaf373e0973de9f2ee9931ae598"
+    ],
+    "availabilityLabel": "June 1 \u2013 Aug 31",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Laundry",
+      "Near campus",
+      "Sublet",
+      "Roommate"
+    ],
+    "extraCosts": [
+      "Utilities mentioned",
+      "Fees mentioned"
+    ],
+    "utilitiesNotes": "Apartment Details 4 bed / 2 bath apartment Renting 1 private room You would have 2\u20133 male roommates No pets allowed I will cover the $350 s..."
   },
   {
     "id": "reddit-onn2bcw",
@@ -328,21 +491,169 @@
     "utilitiesNotes": "Fully furnished and utilities included."
   },
   {
-    "id": "reddit-omyf2a2",
-    "title": "I am an upcoming sophmore and looking for girls to join my roommate gro...",
-    "description": "hi!! I am an upcoming sophmore and looking for girls to join my roommate group for this upcoming selection!! I am hoping for dav B and I have a number in the 400s",
+    "id": "reddit-onhyj2i",
+    "title": "$1,400 housing lead near Fenway",
+    "description": "Fenway Summer 1 & 2 Sublet Looking for someone (preferably F) to sublet my room in a 2 bed/1 bath apartment in Fenway. 2 minute walk from Fenway Park among other venues/bars (Cask n Flagon, House of Blues etc) and 10 minute walk through the Fens to campus. Room available is the...",
+    "price": 1400,
+    "location": "Fenway, Boston, MA",
+    "bedrooms": 2,
+    "bathrooms": 1.0,
+    "platform": "Reddit",
+    "dateListed": "2026-05-23",
+    "imageUrl": "https://preview.redd.it/bm266g5qhy2h1.jpeg?width=899&format=pjpg&auto=webp&s=e842d80af8f797490419736cb27380d7b3c11f31",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/onhyj2i/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/wllm_strt",
+    "sourceIntent": "offer",
+    "imageUrls": [
+      "https://preview.redd.it/bm266g5qhy2h1.jpeg?width=899&format=pjpg&auto=webp&s=e842d80af8f797490419736cb27380d7b3c11f31"
+    ],
+    "availabilityLabel": "Summer 1",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Summer 1"
+    ],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Laundry",
+      "Sublet",
+      "Housing megathread"
+    ],
+    "extraCosts": []
+  },
+  {
+    "id": "reddit-onft3sl",
+    "title": "$1k mid july-august sublet hi!",
+    "description": "$1k mid july-august sublet hi! my housemates and i\u2019s apartment will have an unfurnished private room available to sublet from around mid july through the end of august! rent is $1k + utilities, located on the third floor, 10 minutes walk to heath st and jackson sq stations, one...",
     "price": null,
     "location": "Boston, MA",
     "bedrooms": 1,
     "bathrooms": 1,
     "platform": "Reddit",
-    "dateListed": "2026-05-20",
-    "imageUrl": null,
-    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/omyf2a2/",
+    "dateListed": "2026-05-23",
+    "imageUrl": "https://preview.redd.it/by5nnm8miw2h1.jpeg?width=3024&format=pjpg&auto=webp&s=1d5256bb4a2b1e826f5e7ce15cc5a2065442bc15",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/onft3sl/",
     "sourceVettedUsers": false,
     "sourceSubreddit": "r/NEU",
     "sourceThreadTitle": "NEU Housing Megathread",
-    "sourceAuthor": "/u/isabelnotfound",
+    "sourceAuthor": "/u/felixfanatic0325",
+    "sourceIntent": "offer",
+    "imageUrls": [
+      "https://preview.redd.it/by5nnm8miw2h1.jpeg?width=3024&format=pjpg&auto=webp&s=1d5256bb4a2b1e826f5e7ce15cc5a2065442bc15"
+    ],
+    "availabilityLabel": "july-august",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Furnished",
+      "Laundry",
+      "Sublet",
+      "Housing megathread"
+    ],
+    "extraCosts": [
+      "Utilities mentioned"
+    ],
+    "utilitiesNotes": "rent is $1k + utilities, located on the third floor, 10 minutes walk to heath st and jackson sq stations, one of 3 rooms, spacious kitchen,..."
+  },
+  {
+    "id": "reddit-olg31ht",
+    "title": "\u2728 Fully Furnished Summer Sublet in Lightview | June \u2192 August 14, 2026 |...",
+    "description": "\u2728 Fully Furnished Summer Sublet in Lightview | June \u2192 August 14, 2026 | NEU/WIT Area \u2728 Private deluxe bedroom available in Lightview (02120): the closest modern student residence to Northeastern University. \ud83d\udd70\ufe0f\u2757\ufe0fSIGN ASAP SPECIAL: First month discounted rent available for early c...",
+    "price": null,
+    "location": "Back Bay, Boston, MA",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "platform": "Reddit",
+    "dateListed": "2026-05-12",
+    "imageUrl": "https://preview.redd.it/0c67n49wtr0h1.jpeg?width=1206&format=pjpg&auto=webp&s=1a0490b963660ad9bd07e282dab016aab82a2fb5",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/olg31ht/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/ikatorina",
+    "sourceIntent": "offer",
+    "imageUrls": [
+      "https://preview.redd.it/0c67n49wtr0h1.jpeg?width=1206&format=pjpg&auto=webp&s=1a0490b963660ad9bd07e282dab016aab82a2fb5"
+    ],
+    "availabilityLabel": "Summer",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Summer"
+    ],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Furnished",
+      "Laundry",
+      "Gym",
+      "Co-op term"
+    ],
+    "extraCosts": [
+      "Utilities mentioned"
+    ],
+    "utilitiesNotes": "\ud83d\udd70\ufe0f\u2757\ufe0fSIGN ASAP SPECIAL: First month discounted rent available for early commitment \ud83d\udccd Prime location: \u2022 Directly across from Northeastern & W..."
+  },
+  {
+    "id": "reddit-ol8lyna",
+    "title": "Looking to sublet my room on Marcella street from July 1-august 31.",
+    "description": "Looking to sublet my room on Marcella street from July 1-august 31. Its a 6 minute drive, 12 minute commute by public transport, or a 0.9 mile walk from campus. Price is 1440/month. My parking spot in the driveway is 100/month if you want it. The place has 2 bathrooms and a larg...",
+    "price": 1440,
+    "location": "Boston, MA",
+    "bedrooms": 1,
+    "bathrooms": 2.0,
+    "platform": "Reddit",
+    "dateListed": "2026-05-11",
+    "imageUrl": "https://preview.redd.it/mw9nf77cak0h1.jpeg?width=1080&format=pjpg&auto=webp&s=1d53df355695a88ab12c590a008c54f0ca15b8dd",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/ol8lyna/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/NeuAlum-busmStudent",
+    "sourceIntent": "offer",
+    "imageUrls": [
+      "https://preview.redd.it/mw9nf77cak0h1.jpeg?width=1080&format=pjpg&auto=webp&s=1d53df355695a88ab12c590a008c54f0ca15b8dd",
+      "https://preview.redd.it/9ebt4bwhak0h1.jpeg?width=1080&format=pjpg&auto=webp&s=7bbb14a4715054af107f49bfa70fadc6925c6587"
+    ],
+    "availabilityLabel": "July 1-august 31",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Parking",
+      "Driveway",
+      "Sublet",
+      "Roommate"
+    ],
+    "extraCosts": [],
+    "roommatesTotal": 3,
+    "parking": "Driveway access"
+  },
+  {
+    "id": "reddit-okue6lm",
+    "title": "Anyone looking for housing 2026-27 school year?",
+    "description": "Anyone looking for housing 2026-27 school year? Currently looking for a new roommate to move in to my apartment. 2 bed 1 bath. 4 min walk to green line, 15 min walk to campus. Preferably a roommate who is fine with smoking inside the apartment.",
+    "price": null,
+    "location": "Boston, MA",
+    "bedrooms": 2,
+    "bathrooms": 1.0,
+    "platform": "Reddit",
+    "dateListed": "2026-05-09",
+    "imageUrl": null,
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/okue6lm/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/Training-Chip-2271",
     "sourceIntent": "offer",
     "imageUrls": [],
     "availabilityLabel": null,
@@ -353,35 +664,6 @@
       "Reddit",
       "r/NEU",
       "Roommate",
-      "Housing megathread"
-    ],
-    "extraCosts": []
-  },
-  {
-    "id": "reddit-om262b1",
-    "title": "I have something available from late June, not sure if that is a dealbr...",
-    "description": "I have something available from late June, not sure if that is a dealbreaker",
-    "price": null,
-    "location": "Boston, MA",
-    "bedrooms": 1,
-    "bathrooms": 1,
-    "platform": "Reddit",
-    "dateListed": "2026-05-16",
-    "imageUrl": null,
-    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/om262b1/",
-    "sourceVettedUsers": false,
-    "sourceSubreddit": "r/NEU",
-    "sourceThreadTitle": "NEU Housing Megathread",
-    "sourceAuthor": "/u/Positive_Roll2085",
-    "sourceIntent": "offer",
-    "imageUrls": [],
-    "availabilityLabel": null,
-    "availableFrom": null,
-    "availableTo": null,
-    "termTags": [],
-    "amenities": [
-      "Reddit",
-      "r/NEU",
       "Housing megathread"
     ],
     "extraCosts": []
@@ -421,69 +703,32 @@
     "extraCosts": []
   },
   {
-    "id": "reddit-ok4yg7j",
-    "title": "$1,500 housing lead near Allston",
-    "description": "Spacious 2b1b in an amazing location available for rent!! June-August, option to renew, available only for women. Location - Allston. Just TWO mins walk from the green line (Harvard Ave T) and bus stop. \ud83d\ude83 Plenty of cafes, restaurants, and grocery stores nearby. \ud83c\udf5c\ud83e\uddcb About the apar...",
-    "price": 1500,
-    "location": "Allston, Boston, MA",
+    "id": "reddit-ok51tmy",
+    "title": "Subleasing/subletting my property from June 1st to August 31st.",
+    "description": "Subleasing/subletting my property from June 1st to August 31st. 1.4k/month rent negotiatable. 10 minute walk from Northeastern/Ruggles T. https://preview.redd.it/sxpia0f34ezg1.png?width=1140&format=png&auto=webp&s=ca8a0450ca2ecaea2dec6bd9e4061e156205cafc furniture included, as a...",
+    "price": null,
+    "location": "Ruggles, Boston, MA",
     "bedrooms": 1,
     "bathrooms": 1,
     "platform": "Reddit",
     "dateListed": "2026-05-05",
-    "imageUrl": null,
-    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/ok4yg7j/",
+    "imageUrl": "https://preview.redd.it/sxpia0f34ezg1.png?width=1140&format=png&auto=webp&s=ca8a0450ca2ecaea2dec6bd9e4061e156205cafc",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/ok51tmy/",
     "sourceVettedUsers": false,
     "sourceSubreddit": "r/NEU",
     "sourceThreadTitle": "NEU Housing Megathread",
-    "sourceAuthor": "/u/Silly-Winter-9389",
+    "sourceAuthor": "/u/SnooMaps8602",
     "sourceIntent": "offer",
-    "imageUrls": [],
-    "availabilityLabel": "June-August",
+    "imageUrls": [
+      "https://preview.redd.it/sxpia0f34ezg1.png?width=1140&format=png&auto=webp&s=ca8a0450ca2ecaea2dec6bd9e4061e156205cafc"
+    ],
+    "availabilityLabel": "June 1st to August 31st",
     "availableFrom": null,
     "availableTo": null,
     "termTags": [],
     "amenities": [
       "Reddit",
       "r/NEU",
-      "Furnished",
-      "Laundry",
-      "Near campus",
-      "Roommate"
-    ],
-    "extraCosts": [
-      "Utilities mentioned",
-      "Fees mentioned"
-    ],
-    "utilitiesNotes": "Rent - $1500 + utilities per month (def a steal for this price in this area\ud83c\udf1f) plus one time move in fee."
-  },
-  {
-    "id": "reddit-ok4pyhd",
-    "title": "$1,800 housing lead near Fenway",
-    "description": "Fenway Summer 1 & 2 Sublet Looking for someone (preferably F) to sublet my room in a 2 bed/1 bath apartment in Fenway. 2 minute walk from Fenway Park among other venues/bars (Cask n Flagon, House of Blues etc) and 10 minute walk through the Fens to campus. Room available is the...",
-    "price": 1800,
-    "location": "Fenway, Boston, MA",
-    "bedrooms": 2,
-    "bathrooms": 1.0,
-    "platform": "Reddit",
-    "dateListed": "2026-05-05",
-    "imageUrl": null,
-    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/ok4pyhd/",
-    "sourceVettedUsers": false,
-    "sourceSubreddit": "r/NEU",
-    "sourceThreadTitle": "NEU Housing Megathread",
-    "sourceAuthor": "/u/wllm_strt",
-    "sourceIntent": "offer",
-    "imageUrls": [],
-    "availabilityLabel": "Summer 1",
-    "availableFrom": null,
-    "availableTo": null,
-    "termTags": [
-      "Summer 1"
-    ],
-    "amenities": [
-      "Reddit",
-      "r/NEU",
-      "Laundry",
       "Sublet",
       "Housing megathread"
     ],
@@ -522,6 +767,115 @@
       "Sublet"
     ],
     "extraCosts": []
+  },
+  {
+    "id": "reddit-ojwrp79",
+    "title": "urgently looking for someone to take over my lease for the summer.",
+    "description": "Hi everyone! urgently looking for someone to take over my lease for the summer. the apartment is a 5-7 minute walk from both north eastern and berklee, across the street from whole foods and CVS, and short walk from the green line. you would be sharing one room in a 2b/1b with o...",
+    "price": 1400,
+    "location": "Boston, MA",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "platform": "Reddit",
+    "dateListed": "2026-05-04",
+    "imageUrl": "https://preview.redd.it/mr2j98k0v5zg1.jpeg?width=4032&format=pjpg&auto=webp&s=b17417452529b82225f08147b82da47e75e6aff9",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/ojwrp79/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/ProdRazaK",
+    "sourceIntent": "offer",
+    "imageUrls": [
+      "https://preview.redd.it/mr2j98k0v5zg1.jpeg?width=4032&format=pjpg&auto=webp&s=b17417452529b82225f08147b82da47e75e6aff9"
+    ],
+    "availabilityLabel": "Summer",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Summer"
+    ],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Housing megathread"
+    ],
+    "extraCosts": []
+  },
+  {
+    "id": "reddit-ojom49t",
+    "title": "I\u2019m renting my room for June through middle of August 2026 near NEU/WIT...",
+    "description": "Hey! I\u2019m renting my room for June through middle of August 2026 near NEU/WIT Area\ud83c\udf1f It\u2019s a private deluxe bedroom in Lightview (postal index 02120). \ud83d\udccc Very good location: Right across from NEU & Wentworth, steps from Orange & Green MBTA lines \ud83d\udccc Move-in ready: Fully furnished, uti...",
+    "price": null,
+    "location": "Boston, MA",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "platform": "Reddit",
+    "dateListed": "2026-05-03",
+    "imageUrl": "https://preview.redd.it/bf9441naixyg1.jpeg?width=4032&format=pjpg&auto=webp&s=6b15cd1cadc143518bb42ab5ffae5ffa0dd4aab6",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/ojom49t/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/ikatorina",
+    "sourceIntent": "offer",
+    "imageUrls": [
+      "https://preview.redd.it/bf9441naixyg1.jpeg?width=4032&format=pjpg&auto=webp&s=6b15cd1cadc143518bb42ab5ffae5ffa0dd4aab6"
+    ],
+    "availabilityLabel": null,
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Furnished",
+      "Laundry",
+      "Gym",
+      "Near campus"
+    ],
+    "extraCosts": [
+      "Utilities mentioned"
+    ],
+    "utilitiesNotes": "\ud83d\udccc Very good location: Right across from NEU & Wentworth, steps from Orange & Green MBTA lines \ud83d\udccc Move-in ready: Fully furnished, utilities i..."
+  },
+  {
+    "id": "reddit-ojk87fq",
+    "title": "$1,700 housing lead near Ruggles",
+    "description": "If anyone is still looking for summer housing (between now and August 31), I\u2019m looking for 1 female tenant to sublet my room in a 2bed/1bath apartment right by ISEC. Here\u2019s some more info: The unit is the larger of two bedrooms in a 2 bed, 1 bath furnished apartment right next t...",
+    "price": 1700,
+    "location": "Ruggles, Boston, MA",
+    "bedrooms": 2,
+    "bathrooms": 1.0,
+    "platform": "Reddit",
+    "dateListed": "2026-05-02",
+    "imageUrl": "https://preview.redd.it/fltjckaa5syg1.jpeg?width=3024&format=pjpg&auto=webp&s=493e2d7083eb82b462eabca0778d8d88ff1e79e6",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/ojk87fq/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/ExchangeExotic2303",
+    "sourceIntent": "offer",
+    "imageUrls": [
+      "https://preview.redd.it/fltjckaa5syg1.jpeg?width=3024&format=pjpg&auto=webp&s=493e2d7083eb82b462eabca0778d8d88ff1e79e6"
+    ],
+    "availabilityLabel": "Summer",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Summer"
+    ],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Furnished",
+      "Sublet",
+      "Housing megathread"
+    ],
+    "extraCosts": [
+      "Utilities mentioned",
+      "Fees mentioned"
+    ],
+    "utilitiesNotes": "Rent is $1700/month (somewhat flexible) and utilities typically are about $50/month."
   },
   {
     "id": "reddit-ojjvply",
@@ -594,24 +948,135 @@
     "utilitiesNotes": "Utilities and WiFi are included, as well as 24/7 security and maintenance, central AC/heat, gym, and mail and laundry rooms."
   },
   {
-    "id": "reddit-oiyuwq2",
-    "title": "$1,530 housing lead near Roxbury Crossing",
-    "description": "Hi all! I'm looking for someone to take over my sublet from July 1 to August 31. The apartment is 34 Greenwich St in Roxbury Crossing. It's a 5 minute walk right behind Lightview, so it's close to campus. The unit is 3 beds and 2 baths. The room I will be subletting is in the ba...",
-    "price": 1530,
+    "id": "reddit-oj25mx6",
+    "title": "$1,025 housing lead near Roxbury Crossing",
+    "description": "Hello! I am subletting my room from June 1st (6/1) to August 31st (8/31). The location is a 15-minute walk from Northeastern's campus. For public transit, we are 1 block away from the Roxbury Crossing Orange Line stop and about a 10-minute walk from the Longwood Medical Area Gre...",
+    "price": 1025,
     "location": "Roxbury Crossing, Boston, MA",
-    "bedrooms": 3,
-    "bathrooms": 2.0,
+    "bedrooms": 1,
+    "bathrooms": 1,
     "platform": "Reddit",
-    "dateListed": "2026-04-29",
-    "imageUrl": null,
-    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/oiyuwq2/",
+    "dateListed": "2026-04-30",
+    "imageUrl": "https://preview.redd.it/ofsrw2aon8yg1.jpeg?width=2880&format=pjpg&auto=webp&s=61d6e8c6dcd288b812838cdba52231849c156190",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/oj25mx6/",
     "sourceVettedUsers": false,
     "sourceSubreddit": "r/NEU",
     "sourceThreadTitle": "NEU Housing Megathread",
-    "sourceAuthor": "/u/Garebear0525",
+    "sourceAuthor": "/u/No-Profile-5390",
+    "sourceIntent": "offer",
+    "imageUrls": [
+      "https://preview.redd.it/ofsrw2aon8yg1.jpeg?width=2880&format=pjpg&auto=webp&s=61d6e8c6dcd288b812838cdba52231849c156190"
+    ],
+    "availabilityLabel": null,
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Sublet",
+      "Roommate",
+      "Housing megathread"
+    ],
+    "extraCosts": [
+      "Utilities mentioned"
+    ],
+    "utilitiesNotes": "Utilities are separate and run around $30-50 per month."
+  },
+  {
+    "id": "reddit-oiocjh0",
+    "title": "$1,300 housing lead near Brookline",
+    "description": "Edit: This sublet has been leased Hi, I'm looking for someone to sublet my room in Brookline from mid June to end of August (6/15\u20138/31). Dates are flexible, send me a message and we can work something out! Single bedroom in a 3 bed / 1 bath apartment $1,300/month, utilities incl...",
+    "price": 1300,
+    "location": "Brookline, Boston, MA",
+    "bedrooms": 3,
+    "bathrooms": 1.0,
+    "platform": "Reddit",
+    "dateListed": "2026-04-28",
+    "imageUrl": "https://preview.redd.it/gxokzzb1guxg1.jpeg?width=3734&format=pjpg&auto=webp&s=3e5b3e7713ee82fba1551322afa461500e80bc1e",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/oiocjh0/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/atsunnn",
+    "sourceIntent": "offer",
+    "imageUrls": [
+      "https://preview.redd.it/gxokzzb1guxg1.jpeg?width=3734&format=pjpg&auto=webp&s=3e5b3e7713ee82fba1551322afa461500e80bc1e"
+    ],
+    "availabilityLabel": null,
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Furnished",
+      "Laundry",
+      "Near campus",
+      "Sublet"
+    ],
+    "extraCosts": [
+      "Utilities mentioned",
+      "Fees mentioned"
+    ],
+    "utilitiesNotes": "Single bedroom in a 3 bed / 1 bath apartment $1,300/month, utilities included (electricity + WiFi), first half-month prorated at $650 Move..."
+  },
+  {
+    "id": "reddit-oio6jbu",
+    "title": "$2,214 housing lead near Ruggles",
+    "description": "Hi!!! I\u2019m looking for someone to sublet my single room in my 4-bed, 2-bath apartment in Lightview from mid May - August 14. The apartment is fully furnished with a full-sized bed, a desk and chair, and two dressers in each bedroom. The kitchen (oven, dishwasher, stove, microwave...",
+    "price": 2214,
+    "location": "Ruggles, Boston, MA",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "platform": "Reddit",
+    "dateListed": "2026-04-28",
+    "imageUrl": null,
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/oio6jbu/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/CremeSalty7774",
     "sourceIntent": "offer",
     "imageUrls": [],
-    "availabilityLabel": "July 1 to August 31",
+    "availabilityLabel": "May - August",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Furnished",
+      "Laundry",
+      "Gym",
+      "Sublet"
+    ],
+    "extraCosts": [
+      "Utilities mentioned"
+    ],
+    "utilitiesNotes": "Location: less than a 5-minute walk to Northeastern University Transportation: less than a 10-minute walk to Ruggles and Mass Ave T stops B..."
+  },
+  {
+    "id": "reddit-oinyd4l",
+    "title": "$1,200 housing lead near Mission Hill",
+    "description": "Summer Sublet on Mission Hill $1200/month Hello! I'm looking for a sublet from June-August (dates flexible) for my bedroom at 65 Hillside St, Mission Hill. It's minutes away from the orange line (Roxbury Crossing), the green line (Brigham Circle), and a corner store (Hillside Ma...",
+    "price": 1200,
+    "location": "Mission Hill, Boston, MA",
+    "bedrooms": 4,
+    "bathrooms": 1.0,
+    "platform": "Reddit",
+    "dateListed": "2026-04-28",
+    "imageUrl": "https://preview.redd.it/h4nhzv02ztxg1.jpeg?width=660&format=pjpg&auto=webp&s=2b1042d88db09f75a715482f31859c358a93df09",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/oinyd4l/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/neugorilla",
+    "sourceIntent": "offer",
+    "imageUrls": [
+      "https://preview.redd.it/h4nhzv02ztxg1.jpeg?width=660&format=pjpg&auto=webp&s=2b1042d88db09f75a715482f31859c358a93df09"
+    ],
+    "availabilityLabel": "June-August",
     "availableFrom": null,
     "availableTo": null,
     "termTags": [
@@ -661,6 +1126,150 @@
       "Fees mentioned"
     ],
     "utilitiesNotes": "It\u2019s 1167 a month and utilities range from 50-120 a month."
+  },
+  {
+    "id": "reddit-oi1ngpn",
+    "title": "Subletting\u2757\ufe0f\u2757\ufe0fBoston 2B1B close to BU Medical Campus and NEU Terra on L...",
+    "description": "Subletting\u2757\ufe0f\u2757\ufe0fBoston 2B1B close to BU Medical Campus and NEU Terra on Lenox | 11 E Lenox Time: May 12 - August 20, 2026 Price: 2600 per month Deposit: Negotiable via private message Move-in ready \ud83c\udf1f Indoor washing machine + dryer (No need to queue downstairs, so comfortable) \ud83c\udf1f Pr...",
+    "price": 2600,
+    "location": "Boston, MA",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "platform": "Reddit",
+    "dateListed": "2026-04-24",
+    "imageUrl": "https://preview.redd.it/gbcxin1x56xg1.jpeg?width=2364&format=pjpg&auto=webp&s=655ea2cd212cebab66d982c567a48b964ac4e1a1",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/oi1ngpn/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/llayneee",
+    "sourceIntent": "offer",
+    "imageUrls": [
+      "https://preview.redd.it/gbcxin1x56xg1.jpeg?width=2364&format=pjpg&auto=webp&s=655ea2cd212cebab66d982c567a48b964ac4e1a1",
+      "https://preview.redd.it/crnz98l566xg1.jpeg?width=1773&format=pjpg&auto=webp&s=906c9b89689849b94b3ffe92a1369789c0e7f071",
+      "https://preview.redd.it/er4xcba866xg1.jpeg?width=1131&format=pjpg&auto=webp&s=8c4474dd7bfe9c76fb03acf295ce32ea6af7e12e"
+    ],
+    "availabilityLabel": "May 12 - August 20",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Summer"
+    ],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Sublet",
+      "Housing megathread"
+    ],
+    "extraCosts": []
+  },
+  {
+    "id": "reddit-ohwg4hp",
+    "title": "$1,735 housing lead near Back Bay",
+    "description": "Sublet Available from June to end of August One room available in 2bed 1 bathroom apt in fenway/back bay near whole foods and trader joes. Nearby all green line trains. (3 min walk to hynes/ 5 min walk to symphony) The room is unfurnished, but I can leave/sell a bed frame and cl...",
+    "price": 1735,
+    "location": "Back Bay, Boston, MA",
+    "bedrooms": 2,
+    "bathrooms": 1.0,
+    "platform": "Reddit",
+    "dateListed": "2026-04-23",
+    "imageUrl": "https://preview.redd.it/uozrswoog0xg1.jpeg?width=4284&format=pjpg&auto=webp&s=83555a0e1a08c01852055397f2137d13cda94398",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/ohwg4hp/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/selloutslave9191",
+    "sourceIntent": "offer",
+    "imageUrls": [
+      "https://preview.redd.it/uozrswoog0xg1.jpeg?width=4284&format=pjpg&auto=webp&s=83555a0e1a08c01852055397f2137d13cda94398"
+    ],
+    "availabilityLabel": null,
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Furnished",
+      "Near campus",
+      "Sublet",
+      "Housing megathread"
+    ],
+    "extraCosts": [
+      "Utilities mentioned"
+    ],
+    "utilitiesNotes": "Rent is 1735 + Utilities, but I am willing to negotiate."
+  },
+  {
+    "id": "reddit-ohvuw7c",
+    "title": "Sublet available on Fort Hill, 10 minutes from the orange line https://...",
+    "description": "Sublet available on Fort Hill, 10 minutes from the orange line https://preview.redd.it/wftgd6z4yzwg1.jpeg?width=1290&format=pjpg&auto=webp&s=2411c75a7ece0c5ebc1e6abe8697e5c88e044a39 5br/3.5 bath Base rent is 1300$ Utilities not included In unit laundry Central heat and A/C Garag...",
+    "price": 1300,
+    "location": "Boston, MA",
+    "bedrooms": 5,
+    "bathrooms": 3.5,
+    "platform": "Reddit",
+    "dateListed": "2026-04-23",
+    "imageUrl": "https://preview.redd.it/wftgd6z4yzwg1.jpeg?width=1290&format=pjpg&auto=webp&s=2411c75a7ece0c5ebc1e6abe8697e5c88e044a39",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/ohvuw7c/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/Lazagnaboi",
+    "sourceIntent": "offer",
+    "imageUrls": [
+      "https://preview.redd.it/wftgd6z4yzwg1.jpeg?width=1290&format=pjpg&auto=webp&s=2411c75a7ece0c5ebc1e6abe8697e5c88e044a39"
+    ],
+    "availabilityLabel": null,
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Laundry",
+      "Parking",
+      "Sublet",
+      "Housing megathread"
+    ],
+    "extraCosts": [
+      "Utilities mentioned"
+    ],
+    "parking": "Parking mentioned",
+    "utilitiesNotes": "Sublet available on Fort Hill, 10 minutes from the orange line https://preview.redd.it/wftgd6z4yzwg1.jpeg?width=1290&format=pjpg&auto=webp&..."
+  },
+  {
+    "id": "reddit-ohv3dny",
+    "title": "$1,550 housing lead near Mission Hill",
+    "description": "Hello! I\u2019m looking for one person to take over my room in a 3 bed, 1 bath apartment in Mission Hill while I\u2019m away studying abroad May and June. Rent is $1,550/month. The apartment is located right above a Mission Market, with free street parking available in front. It\u2019s also le...",
+    "price": 1550,
+    "location": "Mission Hill, Boston, MA",
+    "bedrooms": 3,
+    "bathrooms": 1.0,
+    "platform": "Reddit",
+    "dateListed": "2026-04-23",
+    "imageUrl": "https://preview.redd.it/pn09bpqsbzwg1.jpeg?width=768&format=pjpg&auto=webp&s=1733f972f48b3d5bdf97a6572d68956aac5353c3",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/ohv3dny/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/DragonfruitLeading68",
+    "sourceIntent": "offer",
+    "imageUrls": [
+      "https://preview.redd.it/pn09bpqsbzwg1.jpeg?width=768&format=pjpg&auto=webp&s=1733f972f48b3d5bdf97a6572d68956aac5353c3"
+    ],
+    "availabilityLabel": null,
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Parking",
+      "Housing megathread"
+    ],
+    "extraCosts": [],
+    "parking": "Parking mentioned"
   },
   {
     "id": "reddit-ohplkhg",
@@ -733,6 +1342,115 @@
       "Utilities mentioned"
     ],
     "utilitiesNotes": "2 BEDROOMS ARE AVAILABLE SUMMER 2 Rent: $1300-1500 (UTILITIES INCLUDED."
+  },
+  {
+    "id": "reddit-oglz2xd",
+    "title": "$1,100 housing lead near Mission Hill",
+    "description": "Mission Hill Sublet Available https://preview.redd.it/3y7ertbbrmvg1.jpeg?width=4032&format=pjpg&auto=webp&s=d74524bf10ca11a63fb2de246cc15c2dcfd0c50e 1 bedroom for rent in a 2 bath/6 bedroom apartment unit. Basement level; Bed, desk, and dresser provided, other furniture in photo...",
+    "price": 1100,
+    "location": "Mission Hill, Boston, MA",
+    "bedrooms": 1,
+    "bathrooms": 2.0,
+    "platform": "Reddit",
+    "dateListed": "2026-04-16",
+    "imageUrl": "https://preview.redd.it/3y7ertbbrmvg1.jpeg?width=4032&format=pjpg&auto=webp&s=d74524bf10ca11a63fb2de246cc15c2dcfd0c50e",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/oglz2xd/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/CT--7567_",
+    "sourceIntent": "offer",
+    "imageUrls": [
+      "https://preview.redd.it/3y7ertbbrmvg1.jpeg?width=4032&format=pjpg&auto=webp&s=d74524bf10ca11a63fb2de246cc15c2dcfd0c50e"
+    ],
+    "availabilityLabel": null,
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Sublet",
+      "Roommate",
+      "Housing megathread"
+    ],
+    "extraCosts": [
+      "Utilities mentioned"
+    ],
+    "utilitiesNotes": "$1100 plus utilities per month."
+  },
+  {
+    "id": "reddit-ogdyc0s",
+    "title": "Subletting a small private bedroom in a 3B1B for SUMMER 1 (MAY-JUNE), F...",
+    "description": "Subletting a small private bedroom in a 3B1B for SUMMER 1 (MAY-JUNE), Flexible Move in/Move out as well! 3 minute walk from Brigham Circle green line and Stop-n-Shop, 15 minute walk to campus Rent is $950 (negotiable), fully equipped kitchen (gas stove, oven, dishwasher, fridge)...",
+    "price": 950,
+    "location": "Boston, MA",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "platform": "Reddit",
+    "dateListed": "2026-04-15",
+    "imageUrl": "https://preview.redd.it/e2oc3l4ppevg1.jpeg?width=3024&format=pjpg&auto=webp&s=ea8de5a61f7e88c2b5994526a42d442c394f68f9",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/ogdyc0s/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/Zestyclose_Sugar_600",
+    "sourceIntent": "offer",
+    "imageUrls": [
+      "https://preview.redd.it/e2oc3l4ppevg1.jpeg?width=3024&format=pjpg&auto=webp&s=ea8de5a61f7e88c2b5994526a42d442c394f68f9"
+    ],
+    "availabilityLabel": "MAY-JUNE",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Summer 1"
+    ],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Laundry",
+      "Co-op term",
+      "Sublet",
+      "Housing megathread"
+    ],
+    "extraCosts": []
+  },
+  {
+    "id": "reddit-ofz7yfu",
+    "title": "$1,475 housing lead near Mission Hill",
+    "description": "Hi! Looking for a girl to sublet my room for Summer 1 (May 1-June 30) in Mission Hill!! 1 room in a huge 2 story, 6 bed 2 bath apartment, $1475 + utilities , willing to negotiate -close to brigham circle green line stop, stop and shop, convenience store -can leave furniture or t...",
+    "price": 1475,
+    "location": "Mission Hill, Boston, MA",
+    "bedrooms": 6,
+    "bathrooms": 2.0,
+    "platform": "Reddit",
+    "dateListed": "2026-04-13",
+    "imageUrl": "https://preview.redd.it/9kkd6jcxuzug1.jpeg?width=3024&format=pjpg&auto=webp&s=80710d6e0d3093cd6343cfb1efda13203efa65a9",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/ofz7yfu/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/livieerose",
+    "sourceIntent": "offer",
+    "imageUrls": [
+      "https://preview.redd.it/9kkd6jcxuzug1.jpeg?width=3024&format=pjpg&auto=webp&s=80710d6e0d3093cd6343cfb1efda13203efa65a9"
+    ],
+    "availabilityLabel": "May 1-June 30",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Summer 1"
+    ],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Sublet",
+      "Housing megathread"
+    ],
+    "extraCosts": [
+      "Utilities mentioned"
+    ],
+    "utilitiesNotes": "1 room in a huge 2 story, 6 bed 2 bath apartment, $1475 + utilities , willing to negotiate -close to brigham circle green line stop, stop a..."
   },
   {
     "id": "reddit-ofyvfy8",

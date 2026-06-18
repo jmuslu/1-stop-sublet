@@ -74,6 +74,7 @@ class RedditThreadScraper(ListingScraper):
         photo_entries = [entry for entry in entries if entry.image_urls]
         listings: list[NormalizedListing] = []
         seen_listing_keys: set[str] = set()
+        seen_listing_slots: set[str] = set()
         seen_author_fingerprints: dict[str, list[set[str]]] = {}
         for entry in entries:
             intent = self._classify_intent(entry.content, has_images=bool(entry.image_urls))
@@ -91,10 +92,15 @@ class RedditThreadScraper(ListingScraper):
             listing_key = self._listing_key(entry.author, title)
             if listing_key in seen_listing_keys:
                 continue
+            slot_key = self._listing_slot_key(entry.author, price, location, availability["label"])
+            if slot_key and slot_key in seen_listing_slots:
+                continue
             fingerprint = self._listing_fingerprint(entry.content)
             if self._is_near_duplicate(entry.author, fingerprint, seen_author_fingerprints):
                 continue
             seen_listing_keys.add(listing_key)
+            if slot_key:
+                seen_listing_slots.add(slot_key)
             seen_author_fingerprints.setdefault(entry.author or "", []).append(fingerprint)
 
             listings.append(
@@ -217,21 +223,34 @@ class RedditThreadScraper(ListingScraper):
 
     def _classify_intent_with_rules(self, text: str, has_images: bool) -> str:
         lowered = text.lower().replace("’", "'")
-        if any(term.lower() in lowered for term in self.source.config.get("exclude_terms", [])):
+        if self._is_image_only_text(lowered):
             return "seeker"
-        if any(term.lower() in lowered for term in self.source.config.get("question_terms", [])):
+        if self._contains_config_term(lowered, "strong_offer_terms"):
+            return "offer"
+        if self._contains_config_term(lowered, "question_terms"):
             return "question"
-        if any(term.lower() in lowered for term in self.source.config.get("strong_offer_terms", [])):
-            return "offer"
-        if any(term.lower() in lowered for term in self.source.config.get("seeker_terms", [])):
+        if self._contains_config_term(lowered, "exclude_terms"):
             return "seeker"
-        if any(term.lower() in lowered for term in self.source.config.get("offer_terms", [])):
+        if self._contains_config_term(lowered, "seeker_terms"):
+            return "seeker"
+        if self._contains_config_term(lowered, "offer_terms"):
             return "offer"
-        if has_images and any(term.lower() in lowered for term in self.source.config.get("include_terms", [])):
-            return "offer"
-        if any(term.lower() in lowered for term in self.source.config.get("include_terms", [])):
+        if self._contains_config_term(lowered, "include_terms"):
             return "unclear"
         return "seeker"
+
+    def _contains_config_term(self, lowered_text: str, config_key: str) -> bool:
+        for term in self.source.config.get(config_key, []):
+            normalized = term.lower().replace("’", "'")
+            pattern = rf"(?<![a-z0-9]){re.escape(normalized)}(?![a-z0-9])"
+            if re.search(pattern, lowered_text):
+                return True
+        return False
+
+    def _is_image_only_text(self, lowered_text: str) -> bool:
+        without_urls = re.sub(r"https?://\S+", "", lowered_text)
+        words = re.findall(r"\b[a-z][a-z]+\b", without_urls)
+        return "preview.redd.it" in lowered_text and len(words) <= 4
 
     def _classify_intent_with_gemini(self, text: str) -> str | None:
         api_key = os.environ.get("GEMINI_API_KEY")
@@ -315,6 +334,18 @@ class RedditThreadScraper(ListingScraper):
             "subletting",
         }
         return tokens - stop_words
+
+    def _listing_slot_key(
+        self,
+        author: str | None,
+        price: int | None,
+        location: str,
+        availability_label: str | list[str] | None,
+    ) -> str | None:
+        if not author or price is None or not availability_label:
+            return None
+        normalized_availability = re.sub(r"[^a-z0-9]+", " ", str(availability_label).lower()).strip()
+        return f"{author}:{price}:{location.lower()}:{normalized_availability}"
 
     def _is_near_duplicate(
         self,
