@@ -63,6 +63,9 @@ function ListingCard({ listing }: ListingCardProps) {
           </span>
         </div>
         <p className="listing-location">{listing.location}</p>
+        {listing.availabilityLabel && (
+          <p className="listing-availability">{listing.availabilityLabel}</p>
+        )}
         <p className="listing-description">{listing.description}</p>
         <div className="listing-meta">
           <span className="listing-detail">
@@ -84,6 +87,13 @@ function ListingCard({ listing }: ListingCardProps) {
           {listing.sourceThreadTitle && <span>{listing.sourceThreadTitle}</span>}
           {listing.sourceAuthor && <span>{listing.sourceAuthor}</span>}
         </div>
+        {listing.termTags && listing.termTags.length > 0 && (
+          <div className="listing-terms">
+            {listing.termTags.map((term) => (
+              <span key={term}>{term}</span>
+            ))}
+          </div>
+        )}
         {listing.amenities && listing.amenities.length > 0 && (
           <div className="listing-amenities">
             {listing.amenities.slice(0, 3).map((amenity) => (

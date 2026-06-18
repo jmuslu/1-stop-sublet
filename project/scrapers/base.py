@@ -32,6 +32,10 @@ class NormalizedListing:
     sourceAuthor: str | None = None
     sourceIntent: str | None = None
     imageUrls: list[str] = field(default_factory=list)
+    availabilityLabel: str | None = None
+    availableFrom: str | None = None
+    availableTo: str | None = None
+    termTags: list[str] = field(default_factory=list)
     amenities: list[str] = field(default_factory=list)
     roommatesTotal: int | None = None
     floor: str | None = None
@@ -59,6 +63,10 @@ class NormalizedListing:
             "sourceAuthor": self.sourceAuthor,
             "sourceIntent": self.sourceIntent,
             "imageUrls": self.imageUrls,
+            "availabilityLabel": self.availabilityLabel,
+            "availableFrom": self.availableFrom,
+            "availableTo": self.availableTo,
+            "termTags": self.termTags,
             "amenities": self.amenities,
             "extraCosts": self.extraCosts,
         }

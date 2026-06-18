@@ -7,11 +7,27 @@ import re
 import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
+from dataclasses import dataclass
 from html.parser import HTMLParser
 
 from scrapers.base import ListingScraper, NormalizedListing
 
 ATOM_NS = {"atom": "http://www.w3.org/2005/Atom"}
+MONTH_PATTERN = (
+    r"jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|"
+    r"jul(?:y)?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|"
+    r"nov(?:ember)?|dec(?:ember)?"
+)
+
+
+@dataclass(frozen=True)
+class RedditFeedEntry:
+    index: int
+    link: str
+    author: str | None
+    date: str
+    content: str
+    image_urls: list[str]
 
 
 class _TextExtractor(HTMLParser):
@@ -52,61 +68,63 @@ class RedditThreadScraper(ListingScraper):
         thread_url = self.source.config["thread_url"].rstrip("/")
         thread_title = self.source.config.get("thread_title", "Housing megathread")
         subreddit = self.source.config.get("subreddit", "r/NEU")
+        photo_attach_window = int(self.source.config.get("photo_attach_window", 8))
 
+        entries = self._feed_entries(root, thread_url)
+        photo_entries = [entry for entry in entries if entry.image_urls]
         listings: list[NormalizedListing] = []
         seen_listing_keys: set[str] = set()
         seen_author_fingerprints: dict[str, list[set[str]]] = {}
-        for entry in root.findall("atom:entry", ATOM_NS):
-            link = self._entry_link(entry)
-            if not link or link.rstrip("/") == thread_url:
-                continue
-
-            content, image_urls = self._entry_content(entry)
-            intent = self._classify_intent(content, has_images=bool(image_urls))
+        for entry in entries:
+            intent = self._classify_intent(entry.content, has_images=bool(entry.image_urls))
             if intent != "offer":
                 continue
 
-            author = self._entry_author(entry)
-            posted_at = self._entry_date(entry)
-            price = self._extract_price(content)
-            location = self._extract_location(content)
-            bedrooms = self._extract_bedrooms(content)
-            bathrooms = self._extract_bathrooms(content)
-            title = self._build_title(content, price, location, author)
-            amenities = self._extract_amenities(content, subreddit, thread_title)
-            listing_key = self._listing_key(author, title)
+            price = self._extract_price(entry.content)
+            location = self._extract_location(entry.content)
+            bedrooms = self._extract_bedrooms(entry.content)
+            bathrooms = self._extract_bathrooms(entry.content)
+            title = self._build_title(entry.content, price, location, entry.author)
+            amenities = self._extract_amenities(entry.content, subreddit, thread_title)
+            attached_images = self._images_for_entry(entry, photo_entries, photo_attach_window)
+            availability = self._extract_availability(entry.content)
+            listing_key = self._listing_key(entry.author, title)
             if listing_key in seen_listing_keys:
                 continue
-            fingerprint = self._listing_fingerprint(content)
-            if self._is_near_duplicate(author, fingerprint, seen_author_fingerprints):
+            fingerprint = self._listing_fingerprint(entry.content)
+            if self._is_near_duplicate(entry.author, fingerprint, seen_author_fingerprints):
                 continue
             seen_listing_keys.add(listing_key)
-            seen_author_fingerprints.setdefault(author or "", []).append(fingerprint)
+            seen_author_fingerprints.setdefault(entry.author or "", []).append(fingerprint)
 
             listings.append(
                 NormalizedListing(
-                    id=f"reddit-{link.rstrip('/').split('/')[-1]}",
+                    id=f"reddit-{entry.link.rstrip('/').split('/')[-1]}",
                     title=title,
-                    description=self._trim(content, 280),
+                    description=self._trim(entry.content, 280),
                     price=price,
                     location=location,
                     bedrooms=bedrooms,
                     bathrooms=bathrooms,
                     platform=self.source.name,
-                    dateListed=posted_at,
-                    imageUrl=image_urls[0] if image_urls else None,
-                    imageUrls=image_urls,
-                    sourceUrl=link,
+                    dateListed=entry.date,
+                    imageUrl=attached_images[0] if attached_images else None,
+                    imageUrls=attached_images,
+                    sourceUrl=entry.link,
                     sourceVettedUsers=self.source.vetted_users,
                     sourceSubreddit=subreddit,
                     sourceThreadTitle=thread_title,
-                    sourceAuthor=author,
+                    sourceAuthor=entry.author,
                     sourceIntent=intent,
+                    availabilityLabel=availability["label"],
+                    availableFrom=availability["from"],
+                    availableTo=availability["to"],
+                    termTags=availability["tags"],
                     amenities=amenities,
-                    roommatesTotal=self._extract_roommates(content),
-                    parking=self._extract_parking(content),
-                    extraCosts=self._extract_extra_costs(content),
-                    utilitiesNotes=self._extract_utilities(content),
+                    roommatesTotal=self._extract_roommates(entry.content),
+                    parking=self._extract_parking(entry.content),
+                    extraCosts=self._extract_extra_costs(entry.content),
+                    utilitiesNotes=self._extract_utilities(entry.content),
                 )
             )
 
@@ -127,6 +145,46 @@ class RedditThreadScraper(ListingScraper):
         )
         with urllib.request.urlopen(request, timeout=30) as response:
             return response.read().decode("utf-8")
+
+    def _feed_entries(self, root: ET.Element, thread_url: str) -> list[RedditFeedEntry]:
+        entries: list[RedditFeedEntry] = []
+        for index, entry in enumerate(root.findall("atom:entry", ATOM_NS)):
+            link = self._entry_link(entry)
+            if not link or link.rstrip("/") == thread_url:
+                continue
+            content, image_urls = self._entry_content(entry)
+            entries.append(
+                RedditFeedEntry(
+                    index=index,
+                    link=link,
+                    author=self._entry_author(entry),
+                    date=self._entry_date(entry),
+                    content=content,
+                    image_urls=image_urls,
+                )
+            )
+        return entries
+
+    def _images_for_entry(
+        self,
+        entry: RedditFeedEntry,
+        photo_entries: list[RedditFeedEntry],
+        attach_window: int,
+    ) -> list[str]:
+        image_urls = list(entry.image_urls)
+        for photo_entry in photo_entries:
+            if photo_entry.link == entry.link:
+                continue
+            if photo_entry.author != entry.author:
+                continue
+            if abs(photo_entry.index - entry.index) > attach_window:
+                continue
+            if self._classify_intent_with_rules(photo_entry.content, has_images=True) == "offer":
+                continue
+            for image_url in photo_entry.image_urls:
+                if image_url not in image_urls:
+                    image_urls.append(image_url)
+        return image_urls[:6]
 
     def _entry_link(self, entry: ET.Element) -> str | None:
         link = entry.find("atom:link", ATOM_NS)
@@ -163,6 +221,8 @@ class RedditThreadScraper(ListingScraper):
             return "seeker"
         if any(term.lower() in lowered for term in self.source.config.get("question_terms", [])):
             return "question"
+        if any(term.lower() in lowered for term in self.source.config.get("strong_offer_terms", [])):
+            return "offer"
         if any(term.lower() in lowered for term in self.source.config.get("seeker_terms", [])):
             return "seeker"
         if any(term.lower() in lowered for term in self.source.config.get("offer_terms", [])):
@@ -339,6 +399,50 @@ class RedditThreadScraper(ListingScraper):
     def _extract_utilities(self, text: str) -> str | None:
         sentence = self._sentence_containing(text, "utilities")
         return self._trim(sentence, 140) if sentence else None
+
+    def _extract_availability(self, text: str) -> dict[str, str | list[str] | None]:
+        tags = self._extract_term_tags(text)
+        date_range = self._extract_date_range(text)
+        if date_range:
+            label = date_range
+        elif tags:
+            label = ", ".join(tags)
+        else:
+            label = None
+        return {
+            "label": label,
+            "from": None,
+            "to": None,
+            "tags": tags,
+        }
+
+    def _extract_term_tags(self, text: str) -> list[str]:
+        lowered = text.lower()
+        tags = []
+        if re.search(r"\bsummer\s*(?:1|i|a)\b", lowered):
+            tags.append("Summer 1")
+        if re.search(r"\bsummer\s*(?:2|ii|b)\b", lowered):
+            tags.append("Summer 2")
+        if "summer" in lowered and not tags:
+            tags.append("Summer")
+        if "fall" in lowered:
+            tags.append("Fall")
+        if "spring" in lowered:
+            tags.append("Spring")
+        return tags
+
+    def _extract_date_range(self, text: str) -> str | None:
+        compact = re.sub(r"\s+", " ", text)
+        patterns = [
+            rf"\b({MONTH_PATTERN})\.?\s+\d{{1,2}}(?:st|nd|rd|th)?\s*(?:-|–|—|to|through|until)\s*({MONTH_PATTERN})?\.?\s*\d{{1,2}}(?:st|nd|rd|th)?\b",
+            rf"\b({MONTH_PATTERN})\.?\s*(?:-|–|—|to|through|until)\s*({MONTH_PATTERN})\.?\b",
+            rf"\b({MONTH_PATTERN})\.?\s+(?:to|through|until)\s+({MONTH_PATTERN})\.?\b",
+        ]
+        for pattern in patterns:
+            match = re.search(pattern, compact, re.IGNORECASE)
+            if match:
+                return self._trim(match.group(0), 60)
+        return None
 
     def _extract_amenities(self, text: str, subreddit: str, thread_title: str) -> list[str]:
         amenities = ["Reddit", subreddit]

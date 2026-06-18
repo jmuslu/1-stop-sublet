@@ -18,6 +18,10 @@ export interface Listing {
   sourceAuthor?: string;
   sourceIntent?: string;
   imageUrls?: string[];
+  availabilityLabel?: string | null;
+  availableFrom?: string | null;
+  availableTo?: string | null;
+  termTags?: string[];
   amenities?: string[];
   roommatesTotal?: number;
   floor?: string;

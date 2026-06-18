@@ -10,6 +10,17 @@
     "feed_url": "https://www.reddit.com/r/NEU/comments/11eo62e/.rss",
     "default_location": "Boston, MA",
     "max_items": 75,
+    "photo_attach_window": 8,
+    "strong_offer_terms": [
+      "my apartment",
+      "my bedroom",
+      "my furnished room",
+      "my place",
+      "my room",
+      "our apartment",
+      "our place",
+      "sublet for my"
+    ],
     "offer_terms": [
       "available",
       "can pull",

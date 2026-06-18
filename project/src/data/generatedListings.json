@@ -17,6 +17,10 @@
     "sourceAuthor": "/u/Recent-Rope686",
     "sourceIntent": "offer",
     "imageUrls": [],
+    "availabilityLabel": null,
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
     "amenities": [
       "Reddit",
       "r/NEU",
@@ -46,6 +50,12 @@
     "sourceAuthor": "/u/jmissagia",
     "sourceIntent": "offer",
     "imageUrls": [],
+    "availabilityLabel": "Summer 2",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Summer 2"
+    ],
     "amenities": [
       "Reddit",
       "r/NEU",
@@ -72,6 +82,12 @@
     "sourceAuthor": "/u/FoundationStill1687",
     "sourceIntent": "offer",
     "imageUrls": [],
+    "availabilityLabel": "Fall",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Fall"
+    ],
     "amenities": [
       "Reddit",
       "r/NEU",
@@ -98,6 +114,10 @@
     "sourceAuthor": "/u/MysteoH",
     "sourceIntent": "offer",
     "imageUrls": [],
+    "availabilityLabel": null,
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
     "amenities": [
       "Reddit",
       "r/NEU",
@@ -125,6 +145,10 @@
     "sourceAuthor": "/u/Cautious-Shop9699",
     "sourceIntent": "offer",
     "imageUrls": [],
+    "availabilityLabel": null,
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
     "amenities": [
       "Reddit",
       "r/NEU",
@@ -153,6 +177,12 @@
     "sourceAuthor": "/u/ImaginaryArea3083",
     "sourceIntent": "offer",
     "imageUrls": [],
+    "availabilityLabel": "Fall",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Fall"
+    ],
     "amenities": [
       "Reddit",
       "r/NEU",
@@ -165,6 +195,40 @@
       "Utilities mentioned"
     ],
     "utilitiesNotes": "Amenities: \u2705 All utilities included (heat, water, gas, trash, sewer) except electricity \ud83e\uddfa In unit laundry!"
+  },
+  {
+    "id": "reddit-opdi11q",
+    "title": "My roommate and I are looking for 2 students (girls only) to take over...",
+    "description": "Hi! My roommate and I are looking for 2 students (girls only) to take over our 2 bed spaces in a 2 Bed 2 Bath A Floor Plan apartment at LightView from July 1 to August 14, 2026. Both bed spaces are in the same room. Fully furnished, high floor, great view, and full access to Lig...",
+    "price": 1600,
+    "location": "Boston, MA",
+    "bedrooms": 2,
+    "bathrooms": 2.0,
+    "platform": "Reddit",
+    "dateListed": "2026-06-02",
+    "imageUrl": "https://preview.redd.it/db3r0wjj5b5h1.jpeg?width=1206&format=pjpg&auto=webp&s=58980fb68c59207e6f00b65c76102206db77008a",
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/opdi11q/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/Spiritual-Cell-1398",
+    "sourceIntent": "offer",
+    "imageUrls": [
+      "https://preview.redd.it/db3r0wjj5b5h1.jpeg?width=1206&format=pjpg&auto=webp&s=58980fb68c59207e6f00b65c76102206db77008a"
+    ],
+    "availabilityLabel": "July 1 to August 14",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Furnished",
+      "Gym",
+      "Roommate",
+      "Housing megathread"
+    ],
+    "extraCosts": []
   },
   {
     "id": "reddit-ooy8zn7",
@@ -184,6 +248,10 @@
     "sourceAuthor": "/u/GGD7920",
     "sourceIntent": "offer",
     "imageUrls": [],
+    "availabilityLabel": null,
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
     "amenities": [
       "Reddit",
       "r/NEU",
@@ -213,6 +281,10 @@
     "sourceAuthor": "/u/DryVeterinarian2821",
     "sourceIntent": "offer",
     "imageUrls": [],
+    "availabilityLabel": null,
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
     "amenities": [
       "Reddit",
       "r/NEU",
@@ -239,6 +311,10 @@
     "sourceAuthor": "/u/Left_Window_362",
     "sourceIntent": "offer",
     "imageUrls": [],
+    "availabilityLabel": "June through August",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
     "amenities": [
       "Reddit",
       "r/NEU",
@@ -250,6 +326,36 @@
       "Utilities mentioned"
     ],
     "utilitiesNotes": "Fully furnished and utilities included."
+  },
+  {
+    "id": "reddit-omyf2a2",
+    "title": "I am an upcoming sophmore and looking for girls to join my roommate gro...",
+    "description": "hi!! I am an upcoming sophmore and looking for girls to join my roommate group for this upcoming selection!! I am hoping for dav B and I have a number in the 400s",
+    "price": null,
+    "location": "Boston, MA",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "platform": "Reddit",
+    "dateListed": "2026-05-20",
+    "imageUrl": null,
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/omyf2a2/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/isabelnotfound",
+    "sourceIntent": "offer",
+    "imageUrls": [],
+    "availabilityLabel": null,
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Roommate",
+      "Housing megathread"
+    ],
+    "extraCosts": []
   },
   {
     "id": "reddit-om262b1",
@@ -269,6 +375,10 @@
     "sourceAuthor": "/u/Positive_Roll2085",
     "sourceIntent": "offer",
     "imageUrls": [],
+    "availabilityLabel": null,
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
     "amenities": [
       "Reddit",
       "r/NEU",
@@ -294,6 +404,12 @@
     "sourceAuthor": "/u/CuriousBlaze3113",
     "sourceIntent": "offer",
     "imageUrls": [],
+    "availabilityLabel": "June to August",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Summer"
+    ],
     "amenities": [
       "Reddit",
       "r/NEU",
@@ -322,6 +438,10 @@
     "sourceAuthor": "/u/Silly-Winter-9389",
     "sourceIntent": "offer",
     "imageUrls": [],
+    "availabilityLabel": "June-August",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
     "amenities": [
       "Reddit",
       "r/NEU",
@@ -354,6 +474,12 @@
     "sourceAuthor": "/u/wllm_strt",
     "sourceIntent": "offer",
     "imageUrls": [],
+    "availabilityLabel": "Summer 1",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Summer 1"
+    ],
     "amenities": [
       "Reddit",
       "r/NEU",
@@ -381,6 +507,12 @@
     "sourceAuthor": "/u/ChemistBulky5218",
     "sourceIntent": "offer",
     "imageUrls": [],
+    "availabilityLabel": "Summer 1",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Summer 1"
+    ],
     "amenities": [
       "Reddit",
       "r/NEU",
@@ -409,6 +541,10 @@
     "sourceAuthor": "/u/LowSpecGamer25",
     "sourceIntent": "offer",
     "imageUrls": [],
+    "availabilityLabel": null,
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
     "amenities": [
       "Reddit",
       "r/NEU",
@@ -437,6 +573,12 @@
     "sourceAuthor": "/u/NoFeeling8561",
     "sourceIntent": "offer",
     "imageUrls": [],
+    "availabilityLabel": "May 1st-August 14th",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Spring"
+    ],
     "amenities": [
       "Reddit",
       "r/NEU",
@@ -450,6 +592,75 @@
     ],
     "roommatesTotal": 3,
     "utilitiesNotes": "Utilities and WiFi are included, as well as 24/7 security and maintenance, central AC/heat, gym, and mail and laundry rooms."
+  },
+  {
+    "id": "reddit-oiyuwq2",
+    "title": "$1,530 housing lead near Roxbury Crossing",
+    "description": "Hi all! I'm looking for someone to take over my sublet from July 1 to August 31. The apartment is 34 Greenwich St in Roxbury Crossing. It's a 5 minute walk right behind Lightview, so it's close to campus. The unit is 3 beds and 2 baths. The room I will be subletting is in the ba...",
+    "price": 1530,
+    "location": "Roxbury Crossing, Boston, MA",
+    "bedrooms": 3,
+    "bathrooms": 2.0,
+    "platform": "Reddit",
+    "dateListed": "2026-04-29",
+    "imageUrl": null,
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/oiyuwq2/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/Garebear0525",
+    "sourceIntent": "offer",
+    "imageUrls": [],
+    "availabilityLabel": "July 1 to August 31",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Summer"
+    ],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Sublet",
+      "Roommate",
+      "Housing megathread"
+    ],
+    "extraCosts": []
+  },
+  {
+    "id": "reddit-oi3unnz",
+    "title": "I\u2019m graduating this year and looking to sublet my apartment (located on...",
+    "description": "Hi everyone! I\u2019m graduating this year and looking to sublet my apartment (located on the corner of Mass Ave and Tremont, 5 mins away from Orange Line) from July 1 to August 29. It\u2019s 1167 a month and utilities range from 50-120 a month. Washer/Dryer included. Fully furnished (fee...",
+    "price": null,
+    "location": "Boston, MA",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "platform": "Reddit",
+    "dateListed": "2026-04-24",
+    "imageUrl": null,
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/oi3unnz/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/Initial_Focus9264",
+    "sourceIntent": "offer",
+    "imageUrls": [],
+    "availabilityLabel": "July 1 to August 29",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Furnished",
+      "Sublet",
+      "Roommate",
+      "Housing megathread"
+    ],
+    "extraCosts": [
+      "Utilities mentioned",
+      "Fees mentioned"
+    ],
+    "utilitiesNotes": "It\u2019s 1167 a month and utilities range from 50-120 a month."
   },
   {
     "id": "reddit-ohplkhg",
@@ -469,6 +680,10 @@
     "sourceAuthor": "/u/Soymilkjuulpods",
     "sourceIntent": "offer",
     "imageUrls": [],
+    "availabilityLabel": "June 1\u2013Aug 29",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
     "amenities": [
       "Reddit",
       "r/NEU",
@@ -501,6 +716,13 @@
     "sourceAuthor": "/u/eruuc_",
     "sourceIntent": "offer",
     "imageUrls": [],
+    "availabilityLabel": "May-August",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Summer 1",
+      "Summer 2"
+    ],
     "amenities": [
       "Reddit",
       "r/NEU",
@@ -530,6 +752,12 @@
     "sourceAuthor": "/u/Informal-Bat-3707",
     "sourceIntent": "offer",
     "imageUrls": [],
+    "availabilityLabel": "May-August",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Summer"
+    ],
     "amenities": [
       "Reddit",
       "r/NEU",

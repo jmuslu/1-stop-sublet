@@ -237,6 +237,13 @@ body {
 .listing-location {
   font-size: 13px;
   color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.listing-availability {
+  font-size: 13px;
+  color: var(--accent-hover);
+  font-weight: 600;
   margin-bottom: 12px;
 }
 
@@ -266,6 +273,7 @@ body {
 }
 
 .listing-signals,
+.listing-terms,
 .listing-amenities {
   display: flex;
   flex-wrap: wrap;
@@ -274,6 +282,7 @@ body {
 }
 
 .listing-signals span,
+.listing-terms span,
 .listing-amenities span {
   border: 1px solid var(--border);
   border-radius: 4px;
@@ -281,6 +290,13 @@ body {
   font-size: 12px;
   line-height: 1;
   padding: 7px 8px;
+}
+
+.listing-terms span {
+  background: #f4f0e6;
+  border-color: transparent;
+  color: #715c1f;
+  font-weight: 600;
 }
 
 .listing-amenities span {
