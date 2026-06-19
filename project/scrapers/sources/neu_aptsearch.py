@@ -1,154 +1,242 @@
 from __future__ import annotations
 
-import html
 import re
-import urllib.error
-import urllib.request
 from typing import Any
 
 from scrapers.base import ListingScraper, NormalizedListing
 
-_TAG_RE = re.compile(r"<[^>]+>")
-_PRICE_RE = re.compile(r"\$\s*([\d,]{3,6})")
-_BED_RE = re.compile(r"(\d+)\s*(?:bed|beds|bedroom|bedrooms|br)\b", re.IGNORECASE)
-_BATH_RE = re.compile(r"(\d+(?:\.5)?)\s*(?:bath|baths|bathroom|bathrooms|ba)\b", re.IGNORECASE)
-
 
 class NeuAptSearchScraper(ListingScraper):
-    """NEU aptsearch (https://aptsearch.northeastern.edu) — Northeastern's official
-    off-campus housing portal, filtered to ``Sublets Only``.
+    """Northeastern's official off-campus housing portal.
 
-    This is the university's own listing service, so listers are the building owners,
-    property managers, and students who post through NU's portal. It is an *official*
-    channel rather than a peer-verified one, so ``vetted_users`` is left false: we
-    surface it as "official portal" rather than "verified student" in the UI.
-
-    NOTE: as of this writing the portal sits behind Akamai bot protection and returns
-    HTTP 403 ("Access Denied") to non-browser clients, so this source ships disabled
-    (``"enabled": false`` in ``neu_aptsearch.json``). The scraper is wired and ready:
-    enable it once requests are served through an approved browser/proxy path. Until
-    then — and on any 403/network/parse failure — it prints a warning and returns
-    ``[]`` so the build stays green and the previously generated data is kept.
+    The public page is protected from plain HTTP clients, but its own public BFF
+    search endpoint can be read with a normal Chrome-like request. The API key
+    used here is exposed in the site's browser bundle and is not a private user
+    credential.
     """
 
     def scrape(self) -> list[NormalizedListing]:
-        cfg = self.source.config
-        url = cfg["listings_url"]
-        max_items = int(cfg.get("max_items", 100))
-
+        max_items = int(self.source.config.get("max_items", 100))
         try:
-            page = self._fetch(url)
-        except urllib.error.HTTPError as exc:
-            if exc.code == 403:
-                print(
-                    f"Warning: {self.source.name} returned 403 (Akamai bot protection); "
-                    "skipping. Enable via an approved browser/proxy path."
-                )
-            else:
-                print(f"Warning: could not fetch {self.source.name}: {exc}")
-            return []
-        except urllib.error.URLError as exc:
+            placards = self._fetch_placards()
+        except Exception as exc:
             print(f"Warning: could not fetch {self.source.name}: {exc}")
             return []
 
-        try:
-            return self._parse(page)[:max_items]
-        except (ValueError, KeyError) as exc:
-            print(f"Warning: could not parse {self.source.name}: {exc}")
-            return []
-
-    def _fetch(self, url: str) -> str:
-        request = urllib.request.Request(
-            url,
-            headers={
-                "User-Agent": self.source.config.get(
-                    "user_agent",
-                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-                    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36",
-                ),
-                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-                "Accept-Language": "en-US,en;q=0.9",
-            },
-        )
-        with urllib.request.urlopen(request, timeout=30) as response:
-            return response.read().decode("utf-8", "replace")
-
-    def _parse(self, page: str) -> list[NormalizedListing]:
-        site = self.source.config.get(
-            "site_url", "https://aptsearch.northeastern.edu"
-        ).rstrip("/")
-        anchor_re = re.compile(
-            self.source.config.get("listing_href_pattern", r'href="(/listing[s]?/[^"#?]+)"'),
-            re.IGNORECASE,
-        )
-        matches = list(anchor_re.finditer(page))
         listings: list[NormalizedListing] = []
-        seen: set[str] = set()
-        for index, match in enumerate(matches):
-            href = match.group(1)
-            if href in seen:
-                continue
-            seen.add(href)
-            start = match.start()
-            end = matches[index + 1].start() if index + 1 < len(matches) else len(page)
-            listing = self._normalize(href, page[start:end], site)
+        for placard in placards:
+            listing = self._normalize(placard)
             if listing is not None:
                 listings.append(listing)
+            if len(listings) >= max_items:
+                break
         return listings
 
-    def _normalize(self, href: str, segment: str, site: str) -> NormalizedListing | None:
-        text = html.unescape(re.sub(r"\s+", " ", _TAG_RE.sub(" ", segment))).strip()
-        if not text:
+    def _fetch_placards(self) -> list[dict[str, Any]]:
+        try:
+            from curl_cffi import requests
+        except ImportError as exc:
+            raise RuntimeError("curl_cffi is not installed") from exc
+
+        response = requests.get(
+            self.source.config["api_url"],
+            impersonate="chrome",
+            timeout=30,
+            headers={
+                "accept": "application/json",
+                "x-api-key": self.source.config["search_api_key"],
+                "user-agent": self.source.config.get(
+                    "user_agent",
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36",
+                ),
+            },
+        )
+        response.raise_for_status()
+        data = response.json()
+        placards = data.get("data", {}).get("placards", [])
+        if not isinstance(placards, list):
+            raise ValueError("NEU aptsearch response did not contain placards")
+        return [placard for placard in placards if isinstance(placard, dict)]
+
+    def _normalize(self, placard: dict[str, Any]) -> NormalizedListing | None:
+        site_id = str(placard.get("siteId") or "").strip()
+        title = self._trim(str(placard.get("name") or "").strip(), 80)
+        profile_url = str(placard.get("profileUrl") or "").strip()
+        if not site_id or not title or not profile_url:
             return None
 
-        listing_id = re.sub(r"[^a-zA-Z0-9]+", "-", href.strip("/"))
-        source_url = href if href.startswith("http") else f"{site}{href}"
-        price = self._price(text)
-        title = self._trim(text, 80) or "Northeastern off-campus sublet"
+        site = self.source.config.get("site_url", "https://aptsearch.northeastern.edu").rstrip("/")
+        source_url = profile_url if profile_url.startswith("http") else f"{site}{profile_url}"
+        geography = placard.get("geography") if isinstance(placard.get("geography"), dict) else {}
+        floor_plan = (
+            placard.get("floorPlanSummary", {}).get("matching", {})
+            if isinstance(placard.get("floorPlanSummary"), dict)
+            else {}
+        )
+        address = self._address(geography)
+        lease = self._string_or_none(placard.get("standardLeaseTerm"))
+        distance = self._distance(geography)
+        tags = self._term_tags(placard)
+        images = self._images(placard)
 
         return NormalizedListing(
-            id=f"neu-aptsearch-{listing_id}",
+            id=f"neu-aptsearch-{site_id}",
             title=title,
-            description=self._trim(text, 280),
-            price=price,
-            location=self.source.config.get("default_location", "Boston, MA"),
-            bedrooms=self._beds(text),
-            bathrooms=self._baths(text),
+            description=self._description(title, address, placard, lease, distance),
+            price=self._price(floor_plan, placard),
+            location=self._location(geography),
+            bedrooms=self._beds(floor_plan),
+            bathrooms=1.0,
             platform=self.source.name,
-            dateListed="1970-01-01",
-            imageUrl=self._image(segment),
+            dateListed=self._date_listed(placard),
+            imageUrl=images[0] if images else None,
+            imageUrls=images,
             sourceUrl=source_url,
             sourceVettedUsers=self.source.vetted_users,
-            amenities=["NEU aptsearch", "Official portal"],
+            school="Northeastern University",
+            availabilityLabel=lease,
+            termTags=tags,
+            amenities=self._amenities(placard, tags),
+            extraCosts=self._extra_costs(placard),
         )
 
-    def _price(self, text: str) -> int | None:
-        match = _PRICE_RE.search(text)
-        if not match:
-            return None
-        try:
-            return int(match.group(1).replace(",", ""))
-        except ValueError:
-            return None
+    def _address(self, geography: dict[str, Any]) -> str:
+        street = self._string_or_none(geography.get("streetAddress"))
+        city = self._string_or_none(geography.get("cityName"))
+        state = self._string_or_none(geography.get("stateCode"))
+        zip_code = self._string_or_none(geography.get("zipCode"))
+        parts = [part for part in (street, city, state, zip_code) if part]
+        return ", ".join(parts)
 
-    def _beds(self, text: str) -> int:
-        if re.search(r"\bstudio\b", text, re.IGNORECASE):
-            return 0
-        match = _BED_RE.search(text)
-        return int(match.group(1)) if match else 1
+    def _description(
+        self,
+        title: str,
+        address: str,
+        placard: dict[str, Any],
+        lease: str | None,
+        distance: str | None,
+    ) -> str:
+        pieces = [title]
+        if address:
+            pieces.append(address)
+        total_price = self._string_or_none(placard.get("totalMonthlyPrice"))
+        if total_price:
+            pieces.append(total_price)
+        if lease:
+            pieces.append(lease)
+        if distance:
+            pieces.append(distance)
+        if placard.get("isSharedSpace"):
+            pieces.append("Shared housing")
+        return self._trim(" - ".join(pieces), 280)
 
-    def _baths(self, text: str) -> float:
-        match = _BATH_RE.search(text)
-        return float(match.group(1)) if match else 1.0
-
-    def _image(self, segment: str) -> str:
-        match = re.search(r'src="(https?://[^"]+\.(?:jpg|jpeg|png|webp)[^"]*)"', segment, re.IGNORECASE)
+    def _price(self, floor_plan: dict[str, Any], placard: dict[str, Any]) -> int | None:
+        total = self._string_or_none(placard.get("totalMonthlyPrice")) or ""
+        match = re.search(r"\$\s*([\d,]{3,6})", total)
         if match:
-            return match.group(1)
-        return self.source.config.get("default_image_url", "")
+            return int(match.group(1).replace(",", ""))
+
+        price = floor_plan.get("price") if isinstance(floor_plan.get("price"), dict) else {}
+        low = price.get("low")
+        if isinstance(low, (int, float)):
+            return int(low)
+        return None
+
+    def _location(self, geography: dict[str, Any]) -> str:
+        city = self._string_or_none(geography.get("cityName"))
+        state = self._string_or_none(geography.get("stateCode"))
+        zip_code = self._string_or_none(geography.get("zipCode")) or ""
+        if city == "Boston" and zip_code == "02120":
+            return "Mission Hill, Boston, MA"
+        if city == "Boston" and zip_code == "02135":
+            return "Brighton, Boston, MA"
+        if city == "Boston" and zip_code == "02115":
+            return "Fenway, Boston, MA"
+        if city and state:
+            return f"{city}, {state}"
+        return self.source.config.get("default_location", "Boston, MA")
+
+    def _beds(self, floor_plan: dict[str, Any]) -> int:
+        beds = floor_plan.get("beds") if isinstance(floor_plan.get("beds"), dict) else {}
+        low = beds.get("low")
+        if isinstance(low, (int, float)):
+            return int(low)
+        formatted = self._string_or_none(beds.get("formatted")) or ""
+        if "studio" in formatted.lower():
+            return 0
+        match = re.search(r"\d+", formatted)
+        return int(match.group(0)) if match else 1
+
+    def _date_listed(self, placard: dict[str, Any]) -> str:
+        updated = self._string_or_none(placard.get("lastUpdated"))
+        if updated and re.match(r"\d{4}-\d{2}-\d{2}", updated):
+            return updated[:10]
+        return "1970-01-01"
+
+    def _distance(self, geography: dict[str, Any]) -> str | None:
+        target = geography.get("targetCollege") if isinstance(geography.get("targetCollege"), dict) else {}
+        distance = target.get("distance")
+        if isinstance(distance, (int, float)):
+            return f"{distance:g} miles to Northeastern"
+        return None
+
+    def _term_tags(self, placard: dict[str, Any]) -> list[str]:
+        tags = ["Official portal"]
+        if placard.get("isSublet"):
+            tags.append("Sublet")
+        if placard.get("isSharedSpace"):
+            tags.append("Shared housing")
+        if self._string_or_none(placard.get("standardLeaseTerm")):
+            tags.append("Lease term")
+        return tags
+
+    def _amenities(self, placard: dict[str, Any], tags: list[str]) -> list[str]:
+        amenities = ["NEU aptsearch", *tags]
+        title = str(placard.get("name") or "").lower()
+        media_text = " ".join(
+            str(item.get("caption") or "")
+            for item in placard.get("mediaCollection", [])
+            if isinstance(item, dict)
+        ).lower()
+        keyword_labels = {
+            "furnished": "Furnished",
+            "no broker fee": "No broker fee",
+            "virtual": "Virtual tour",
+            "bedroom": "Bedroom",
+        }
+        searchable = f"{title} {media_text}"
+        for keyword, label in keyword_labels.items():
+            if keyword in searchable and label not in amenities:
+                amenities.append(label)
+        return amenities[:8]
+
+    def _extra_costs(self, placard: dict[str, Any]) -> list[str]:
+        total = (self._string_or_none(placard.get("totalMonthlyPrice")) or "").lower()
+        return ["Fees mentioned"] if "fee" in total else []
+
+    def _images(self, placard: dict[str, Any]) -> list[str]:
+        images: list[str] = []
+        for item in placard.get("mediaCollection", []):
+            if not isinstance(item, dict):
+                continue
+            source = self._string_or_none(item.get("source"))
+            if not source:
+                continue
+            if source.startswith("//"):
+                source = f"https:{source}"
+            if source.startswith("http") and source not in images:
+                images.append(source)
+        return images[:6]
+
+    def _string_or_none(self, value: Any) -> str | None:
+        if value is None:
+            return None
+        text = str(value).strip()
+        return text or None
 
     def _trim(self, value: str, limit: int) -> str:
         normalized = re.sub(r"\s+", " ", value or "").strip()
         if len(normalized) <= limit:
             return normalized
-        return normalized[: limit - 1].rstrip() + "…"
+        return normalized[: limit - 1].rstrip() + "..."

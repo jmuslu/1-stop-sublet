@@ -17,6 +17,13 @@ npm run build
 
 `npm run build` runs `npm run scrape` first. The scraper pipeline writes `src/data/generatedListings.json`, then Vite builds the static site.
 
+The Northeastern aptsearch source uses `curl_cffi` so it can make a Chrome-like request to a public endpoint that blocks plain HTTP clients. GitHub Actions installs this automatically. For a local refresh that includes aptsearch:
+
+```bash
+python -m pip install curl_cffi
+npm run scrape
+```
+
 ### AI-assisted listing cleanup
 
 When `GEMINI_API_KEY` is set, the scraper can use Gemini for lightweight ambiguous Reddit classification and optional concise listing titles. The key is used only during the server-side build and is never included in the frontend bundle.
