@@ -5,6 +5,7 @@
   "vetted_users": false,
   "config": {
     "group_url": "https://www.facebook.com/groups/1464611414440265/",
+    "public_url": "https://m.facebook.com/groups/1464611414440265/",
     "input_path": "scrapers/manual/facebook_group_posts.json",
     "default_location": "Boston, MA",
     "default_date": "2026-06-19",

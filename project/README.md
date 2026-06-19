@@ -52,7 +52,7 @@ Each website can have its own config and parser without changing the React app. 
 
 Live sources include Reddit's r/NEU housing megathread, SBLT, and Subletr. The Reddit scraper uses Reddit's public Atom feed because unauthenticated Reddit JSON requests are frequently blocked. If a source returns no listings during a scheduled run, the scraper keeps existing listings for that source instead of wiping good data from the static site.
 
-Facebook group posts are supported through a manual export path rather than an automated login scraper. Run `scrapers/manual/facebook_export_browser_console.js` in the browser console on the Facebook group page, save the downloaded file as `scrapers/manual/facebook_group_posts.json`, then run `npm run scrape` or `npm run build`. The scraper will normalize visible Facebook posts as a `Facebook` source.
+Facebook group posts are supported through a public mobile-page scrape plus an optional manual export path. If Facebook returns only a login page or a limited public preview, run `scrapers/manual/facebook_export_browser_console.js` in the browser console on the Facebook group page, save the downloaded file as `scrapers/manual/facebook_group_posts.json`, then run `npm run scrape` or `npm run build`. The scraper will normalize visible Facebook posts as a `Facebook` source.
 
 ## GitHub Pages Refresh
 
