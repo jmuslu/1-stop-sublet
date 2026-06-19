@@ -17,6 +17,21 @@ npm run build
 
 `npm run build` runs `npm run scrape` first. The scraper pipeline writes `src/data/generatedListings.json`, then Vite builds the static site.
 
+### AI-generated listing titles
+
+When `OPENAI_API_KEY` is set, the scraper sends listing descriptions to the OpenAI Responses API and uses GPT-5.4 with low reasoning to create concise titles. The key is used only during the server-side build and is never included in the frontend bundle.
+
+For local builds:
+
+```bash
+export OPENAI_API_KEY="your_api_key_here"
+npm run build
+```
+
+For GitHub Pages, add `OPENAI_API_KEY` as a repository Actions secret. If the key is absent or the API request fails, the build keeps the scraper-generated fallback titles.
+
+Each clone or fork must supply its own API key. Never commit a real key or name it `VITE_OPENAI_API_KEY`: Vite exposes `VITE_` variables in the browser bundle. The committed `.env.example` contains only a placeholder.
+
 ## Scraper Structure
 
 Scrapers live in `scrapers/`.

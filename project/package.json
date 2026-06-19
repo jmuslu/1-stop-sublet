@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "scrape": "python -m scrapers.run",
+    "scrape": "python3 -m scrapers.run",
     "build": "npm run scrape && tsc -b && vite build",
     "build:app": "tsc -b && vite build",
     "lint": "eslint .",

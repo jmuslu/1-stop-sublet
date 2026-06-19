@@ -3,6 +3,7 @@ export type ListingPlatform = string;
 export interface Listing {
   id: string;
   title: string;
+  titleGeneratedByAI?: boolean;
   description: string;
   price: number | null;
   location: string;

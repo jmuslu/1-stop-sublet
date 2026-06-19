@@ -48,6 +48,7 @@ jobs:
         run: npm run build
         env:
           GITHUB_PAGES: "true"
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4

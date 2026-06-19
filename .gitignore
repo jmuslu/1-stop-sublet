@@ -1,0 +1,4 @@
+# Never commit local credentials from any directory in this repository.
+**/.env
+**/.env.*
+!**/.env.example

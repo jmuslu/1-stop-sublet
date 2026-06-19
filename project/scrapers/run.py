@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 from scrapers.registry import load_sources
+from scrapers.title_generator import generate_titles
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = PROJECT_ROOT / "src" / "data" / "generatedListings.json"
@@ -24,6 +25,7 @@ def main() -> None:
         print(f"Warning: no listings scraped; keeping existing {OUTPUT_PATH}")
         return
 
+    generate_titles(listings)
     listings.sort(key=lambda listing: listing["dateListed"], reverse=True)
     OUTPUT_PATH.write_text(json.dumps(listings, indent=2) + "\n", encoding="utf-8")
     print(f"Wrote {len(listings)} listings to {OUTPUT_PATH}")
