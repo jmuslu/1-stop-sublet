@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 from scrapers.base import ListingScraper, SourceConfig
+from scrapers.sources.facebook_manual import FacebookManualScraper
 from scrapers.sources.neu_aptsearch import NeuAptSearchScraper
 from scrapers.sources.reddit import RedditThreadScraper
 from scrapers.sources.sblt import SbltScraper
@@ -17,6 +18,7 @@ SCRAPER_TYPES: dict[str, type[ListingScraper]] = {
     "sblt_supabase": SbltScraper,
     "subletr_listings": SubletrScraper,
     "neu_aptsearch": NeuAptSearchScraper,
+    "facebook_manual": FacebookManualScraper,
 }
 
 

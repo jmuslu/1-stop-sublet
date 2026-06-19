@@ -1,0 +1,74 @@
+{
+  "type": "facebook_manual",
+  "name": "Facebook",
+  "enabled": true,
+  "vetted_users": false,
+  "config": {
+    "group_url": "https://www.facebook.com/groups/1464611414440265/",
+    "input_path": "scrapers/manual/facebook_group_posts.json",
+    "default_location": "Boston, MA",
+    "default_date": "2026-06-19",
+    "max_items": 50,
+    "location_terms": [
+      "Mission Hill",
+      "Fenway",
+      "Jamaica Plain",
+      "Roxbury",
+      "Back Bay",
+      "South End",
+      "Brookline",
+      "Cambridge",
+      "Allston",
+      "Brighton",
+      "Longwood",
+      "Symphony",
+      "Hemenway",
+      "Fort Hill"
+    ],
+    "strong_offer_terms": [
+      "subletting",
+      "sublet available",
+      "room available",
+      "private room available",
+      "lease takeover",
+      "relet",
+      "available now"
+    ],
+    "offer_terms": [
+      "available",
+      "for rent",
+      "looking for someone to take",
+      "looking to sublet",
+      "looking for a subletter",
+      "roommate needed",
+      "looking for a roommate"
+    ],
+    "include_terms": [
+      "sublet",
+      "housing",
+      "apartment",
+      "bedroom",
+      "lease",
+      "roommate"
+    ],
+    "seeker_terms": [
+      "looking for a sublet",
+      "looking to rent",
+      "need a place",
+      "iso",
+      "in search of",
+      "searching for"
+    ],
+    "exclude_terms": [
+      "looking for housing",
+      "does anyone know",
+      "any recommendations"
+    ],
+    "question_terms": [
+      "question",
+      "advice",
+      "does anyone",
+      "how do i"
+    ]
+  }
+}
