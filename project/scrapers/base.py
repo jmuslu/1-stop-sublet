@@ -31,6 +31,7 @@ class NormalizedListing:
     sourceThreadTitle: str | None = None
     sourceAuthor: str | None = None
     sourceIntent: str | None = None
+    school: str | None = None
     imageUrls: list[str] = field(default_factory=list)
     availabilityLabel: str | None = None
     availableFrom: str | None = None
@@ -62,6 +63,7 @@ class NormalizedListing:
             "sourceThreadTitle": self.sourceThreadTitle,
             "sourceAuthor": self.sourceAuthor,
             "sourceIntent": self.sourceIntent,
+            "school": self.school,
             "imageUrls": self.imageUrls,
             "availabilityLabel": self.availabilityLabel,
             "availableFrom": self.availableFrom,

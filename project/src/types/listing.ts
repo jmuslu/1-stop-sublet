@@ -13,10 +13,11 @@ export interface Listing {
   imageUrl: string | null;
   sourceUrl: string;
   sourceVettedUsers?: boolean;
-  sourceSubreddit?: string;
-  sourceThreadTitle?: string;
-  sourceAuthor?: string;
-  sourceIntent?: string;
+  sourceSubreddit?: string | null;
+  sourceThreadTitle?: string | null;
+  sourceAuthor?: string | null;
+  sourceIntent?: string | null;
+  school?: string | null;
   imageUrls?: string[];
   availabilityLabel?: string | null;
   availableFrom?: string | null;

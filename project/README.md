@@ -17,6 +17,21 @@ npm run build
 
 `npm run build` runs `npm run scrape` first. The scraper pipeline writes `src/data/generatedListings.json`, then Vite builds the static site.
 
+### AI-assisted listing cleanup
+
+When `GEMINI_API_KEY` is set, the scraper can use Gemini for lightweight ambiguous Reddit classification and optional concise listing titles. The key is used only during the server-side build and is never included in the frontend bundle.
+
+For local builds:
+
+```bash
+export GEMINI_API_KEY="your_api_key_here"
+npm run build
+```
+
+For GitHub Pages, add `GEMINI_API_KEY` as a repository Actions secret. If the key is absent or the API request fails, the build keeps the deterministic scraper output.
+
+Each clone or fork must supply its own API key. Never commit a real key or name it `VITE_GEMINI_API_KEY`: Vite exposes `VITE_` variables in the browser bundle. The committed `.env.example` contains only placeholders.
+
 ## Scraper Structure
 
 Scrapers live in `scrapers/`.
@@ -28,9 +43,7 @@ Scrapers live in `scrapers/`.
 
 Each website can have its own config and parser without changing the React app. The frontend only needs the normalized JSON contract.
 
-The first live source is Reddit's r/NEU housing megathread. It uses Reddit's public Atom feed because unauthenticated Reddit JSON requests are frequently blocked. If Reddit rate-limits a scheduled run, the scraper keeps the last generated listing file instead of breaking the deploy. The Atom feed does not expose full comment parent/child relationships, so the scraper filters for offer-style comments and de-duplicates repeated reposts by the same author.
-
-Optional fuzzy classification can use Gemini by setting `GEMINI_API_KEY` in the local environment or as a GitHub Actions secret. Deterministic rules run first, and Gemini is only used for unclear comments.
+Live sources include Reddit's r/NEU housing megathread, SBLT, and Subletr. The Reddit scraper uses Reddit's public Atom feed because unauthenticated Reddit JSON requests are frequently blocked. If a source returns no listings during a scheduled run, the scraper keeps existing listings for that source instead of wiping good data from the static site.
 
 ## GitHub Pages Refresh
 
@@ -47,6 +60,37 @@ If sources are slower or rate-limited, daily is usually enough:
 ```yaml
 - cron: "0 9 * * *"
 ```
+
+## Future implementations
+
+1StopSublet is currently an independent, unofficial tool with no backend: it
+aggregates publicly available listings into a static site and is not affiliated
+with Northeastern University. Several features students asked for require
+infrastructure, accounts, or institutional buy-in we don't have yet. They're on
+the roadmap for if/when the project operates as a real platform:
+
+- **Official source partnerships.** Today we scrape public data on a best-effort
+  basis. With formal data or API partnerships — for example with SBLT, Subletr,
+  and Northeastern's off-campus housing office — we could pull listings directly,
+  more reliably, and with permission, rather than scraping around bot protection.
+- **Verified student accounts & badges.** Per-user verification through
+  Northeastern `.edu` sign-in, "Verified Student" / "Verified Lister" badges,
+  saved searches, and a report-suspicious flow. This needs authentication and a
+  backend, so for now we only label each listing by how much its *source* vets
+  the people posting.
+- **On-site posting & direct messaging.** Letting students post a sublet and
+  message listers (plus group or shared saves) directly on 1StopSublet instead
+  of deep-linking out to partner platforms. Also requires a backend and
+  moderation.
+- **User feedback & community signals.** Letting students rate and review
+  listings, listers, and neighborhoods, flag scams or inaccurate posts, and
+  send feedback about the app itself. This is how aggregated data becomes
+  community-vetted data — but it only works once we have verified accounts and
+  moderation, otherwise reviews can be faked or used for retaliation. So we're
+  holding it until we can do it honestly rather than shipping hollow ratings.
+
+Until then we stay deliberately honest: we show only real aggregated data, label
+the trust level of every source, and link out to the original platforms.
 
 ## React + TypeScript + Vite
 

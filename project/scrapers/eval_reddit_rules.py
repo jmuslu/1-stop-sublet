@@ -15,6 +15,8 @@ class Case:
     expected_price: int | None = None
     expected_availability: str | None = None
     expected_location: str | None = None
+    expected_bedrooms: int | None = None
+    expected_bathrooms: float | None = None
 
 
 CASES = [
@@ -69,10 +71,34 @@ CASES = [
         expected_availability="July 1 to August 14",
     ),
     Case(
+        name="offer_roommate_opening_with_unit_details",
+        text=(
+            "LOOKING FOR A ROOMMATE "
+            "Mixed gender group looking to sign on a yearly lease. Our fourth ghosted us "
+            "but the rent is 1475. Place is 7 min away from orange line. Only requirement "
+            "is to keep communal areas clean. You can invite over whoever you want but a "
+            "heads up to everyone would be nice. 4 bed, 3 bath kitchen has dishwasher and "
+            "in unit laundry. Would like to meet prior to signing lease. If interested "
+            "please text 2017499877"
+        ),
+        has_images=False,
+        expected_intent="offer",
+        expected_price=1475,
+        expected_bedrooms=4,
+        expected_bathrooms=3.0,
+    ),
+    Case(
         name="seeker_roommate_group",
         text="I am an upcoming sophomore looking for girls to join my roommate group for next year.",
         has_images=False,
         expected_intent="seeker",
+    ),
+    Case(
+        name="seeker_roommate_search_without_unit",
+        text="Looking for a roommate to search for apartments with next fall. Budget is around $1500.",
+        has_images=False,
+        expected_intent="seeker",
+        expected_price=1500,
     ),
     Case(
         name="non_listing_student_assumption",
@@ -92,6 +118,8 @@ def main() -> None:
         price = scraper._extract_price(case.text)
         availability = scraper._extract_availability(case.text)["label"]
         location = scraper._extract_location(case.text)
+        bedrooms = scraper._extract_bedrooms(case.text)
+        bathrooms = scraper._extract_bathrooms(case.text)
 
         if intent != case.expected_intent:
             failures.append(f"{case.name}: intent {intent!r} != {case.expected_intent!r}")
@@ -103,6 +131,10 @@ def main() -> None:
             )
         if case.expected_location is not None and location != case.expected_location:
             failures.append(f"{case.name}: location {location!r} != {case.expected_location!r}")
+        if case.expected_bedrooms is not None and bedrooms != case.expected_bedrooms:
+            failures.append(f"{case.name}: bedrooms {bedrooms!r} != {case.expected_bedrooms!r}")
+        if case.expected_bathrooms is not None and bathrooms != case.expected_bathrooms:
+            failures.append(f"{case.name}: bathrooms {bathrooms!r} != {case.expected_bathrooms!r}")
 
     if failures:
         for failure in failures:

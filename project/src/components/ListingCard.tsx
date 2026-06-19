@@ -8,7 +8,10 @@ function ListingCard({ listing }: ListingCardProps) {
   const imageCount = listing.imageUrls?.length ?? (listing.imageUrl ? 1 : 0);
 
   const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
+    const [year, month, day] = dateString.split('-').map(Number);
+    const date = Number.isFinite(year) && Number.isFinite(month) && Number.isFinite(day)
+      ? new Date(year, month - 1, day)
+      : new Date(dateString);
     return date.toLocaleDateString('en-US', {
       month: 'short',
       day: 'numeric',
@@ -36,25 +39,20 @@ function ListingCard({ listing }: ListingCardProps) {
       rel="noreferrer"
       aria-label={`Open ${listing.title} on ${listing.platform}`}
     >
-      <div className="listing-image-container">
-        {listing.imageUrl ? (
-          <>
-            <img
-              src={listing.imageUrl}
-              alt={listing.title}
-              className="listing-image"
-              loading="lazy"
-            />
-            {imageCount > 1 && <span className="listing-photo-count">{imageCount} photos</span>}
-          </>
-        ) : (
-          <div className="listing-no-photo">
-            <span>No photos listed</span>
-          </div>
-        )}
-        <span className="listing-platform-badge">{listing.platform}</span>
-      </div>
+      {listing.imageUrl && (
+        <div className="listing-image-container">
+          <img
+            src={listing.imageUrl}
+            alt={listing.title}
+            className="listing-image"
+            loading="lazy"
+          />
+          {imageCount > 1 && <span className="listing-photo-count">{imageCount} photos</span>}
+          <span className="listing-platform-badge">{listing.platform}</span>
+        </div>
+      )}
       <div className="listing-content">
+        {!listing.imageUrl && <span className="listing-no-photo-chip">No photos listed</span>}
         <div className="listing-header">
           <h3 className="listing-title">{listing.title}</h3>
           <span className="listing-price">
@@ -76,6 +74,7 @@ function ListingCard({ listing }: ListingCardProps) {
           <span className="listing-date">Listed {formatDate(listing.dateListed)}</span>
         </div>
         <div className="listing-signals">
+          {listing.school && <span>{listing.school}</span>}
           {listing.roommatesTotal !== undefined && (
             <span>{listing.roommatesTotal} total roommates</span>
           )}

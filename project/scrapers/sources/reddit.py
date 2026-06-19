@@ -231,6 +231,10 @@ class RedditThreadScraper(ListingScraper):
             return "question"
         if self._contains_config_term(lowered, "exclude_terms"):
             return "seeker"
+        if self._is_roommate_search_without_unit(lowered):
+            return "seeker"
+        if self._has_roommate_opening_evidence(lowered):
+            return "offer"
         if self._contains_config_term(lowered, "seeker_terms"):
             return "seeker"
         if self._contains_config_term(lowered, "offer_terms"):
@@ -251,6 +255,35 @@ class RedditThreadScraper(ListingScraper):
         without_urls = re.sub(r"https?://\S+", "", lowered_text)
         words = re.findall(r"\b[a-z][a-z]+\b", without_urls)
         return "preview.redd.it" in lowered_text and len(words) <= 4
+
+    def _is_roommate_search_without_unit(self, lowered_text: str) -> bool:
+        return bool(
+            re.search(r"\blooking for (?:a )?roommate to (?:search|look|find)\b", lowered_text)
+            or re.search(r"\broommate group\b", lowered_text)
+        )
+
+    def _has_roommate_opening_evidence(self, lowered_text: str) -> bool:
+        roommate_opening = bool(
+            re.search(r"\blooking for (?:a|one|[1-6]) roommate\b", lowered_text)
+            or re.search(r"\bneed (?:a|one|[1-6]) roommate\b", lowered_text)
+            or re.search(r"\b(?:one more|[1-6](?:st|nd|rd|th)?) roommate\b", lowered_text)
+            or "roommate wanted" in lowered_text
+            or "fourth ghosted" in lowered_text
+            or "spot left" in lowered_text
+        )
+        if not roommate_opening:
+            return False
+
+        has_price = self._extract_price(lowered_text) is not None
+        has_unit_size = bool(
+            re.search(r"\b[1-6]\s?(?:bed|beds|bedroom|bedrooms|br)\b", lowered_text)
+            and re.search(r"\b[1-4](?:\.5)?\s?(?:bath|baths|bathroom|bathrooms|ba)\b", lowered_text)
+        )
+        has_existing_unit_signal = bool(
+            re.search(r"\b(?:lease|rent|place|unit|apartment|kitchen|laundry|dishwasher)\b", lowered_text)
+            or re.search(r"\b(?:orange|green|red|blue)\s+line\b", lowered_text)
+        )
+        return has_price and has_unit_size and has_existing_unit_signal
 
     def _classify_intent_with_gemini(self, text: str) -> str | None:
         api_key = os.environ.get("GEMINI_API_KEY")
