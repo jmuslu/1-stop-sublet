@@ -30,6 +30,7 @@ class NormalizedListing:
     sourceSubreddit: str | None = None
     sourceThreadTitle: str | None = None
     sourceAuthor: str | None = None
+    school: str | None = None
     amenities: list[str] = field(default_factory=list)
     roommatesTotal: int | None = None
     floor: str | None = None
@@ -59,6 +60,7 @@ class NormalizedListing:
             "extraCosts": self.extraCosts,
         }
         optional = {
+            "school": self.school,
             "roommatesTotal": self.roommatesTotal,
             "floor": self.floor,
             "parking": self.parking,

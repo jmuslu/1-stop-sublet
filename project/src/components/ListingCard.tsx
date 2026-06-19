@@ -62,6 +62,7 @@ function ListingCard({ listing }: ListingCardProps) {
           <span className="listing-date">Listed {formatDate(listing.dateListed)}</span>
         </div>
         <div className="listing-signals">
+          {listing.school && <span>{listing.school}</span>}
           {listing.roommatesTotal !== undefined && (
             <span>{listing.roommatesTotal} total roommates</span>
           )}

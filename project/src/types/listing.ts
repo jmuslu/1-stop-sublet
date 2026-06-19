@@ -17,6 +17,7 @@ export interface Listing {
   sourceSubreddit?: string;
   sourceThreadTitle?: string;
   sourceAuthor?: string;
+  school?: string;
   amenities?: string[];
   roommatesTotal?: number;
   floor?: string;

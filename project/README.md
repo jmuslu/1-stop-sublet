@@ -61,6 +61,37 @@ If sources are slower or rate-limited, daily is usually enough:
 - cron: "0 9 * * *"
 ```
 
+## Future implementations
+
+1StopSublet is currently an independent, unofficial tool with no backend: it
+aggregates publicly available listings into a static site and is not affiliated
+with Northeastern University. Several features students asked for require
+infrastructure, accounts, or institutional buy-in we don't have yet. They're on
+the roadmap for if/when the project operates as a real platform:
+
+- **Official source partnerships.** Today we scrape public data on a best-effort
+  basis. With formal data or API partnerships — for example with SBLT, Subletr,
+  and Northeastern's off-campus housing office — we could pull listings directly,
+  more reliably, and with permission, rather than scraping around bot protection.
+- **Verified student accounts & badges.** Per-user verification through
+  Northeastern `.edu` sign-in, "Verified Student" / "Verified Lister" badges,
+  saved searches, and a report-suspicious flow. This needs authentication and a
+  backend, so for now we only label each listing by how much its *source* vets
+  the people posting.
+- **On-site posting & direct messaging.** Letting students post a sublet and
+  message listers (plus group or shared saves) directly on 1StopSublet instead
+  of deep-linking out to partner platforms. Also requires a backend and
+  moderation.
+- **User feedback & community signals.** Letting students rate and review
+  listings, listers, and neighborhoods, flag scams or inaccurate posts, and
+  send feedback about the app itself. This is how aggregated data becomes
+  community-vetted data — but it only works once we have verified accounts and
+  moderation, otherwise reviews can be faked or used for retaliation. So we're
+  holding it until we can do it honestly rather than shipping hollow ratings.
+
+Until then we stay deliberately honest: we show only real aggregated data, label
+the trust level of every source, and link out to the original platforms.
+
 ## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
