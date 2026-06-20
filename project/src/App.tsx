@@ -9,6 +9,17 @@ import { useTheme } from './hooks/useTheme';
 import { northeasternScore } from './utils/northeastern';
 import './App.css';
 
+function locationFilterValue(location: string): string {
+  const normalized = location.trim().replace(/\s+/g, ' ');
+  if (normalized === 'Boston, MA') {
+    return normalized;
+  }
+  if (normalized.endsWith(', Boston, MA')) {
+    return normalized.replace(', Boston, MA', ', MA');
+  }
+  return normalized;
+}
+
 function App() {
   const [view, setView] = useState<View>('home');
   const { theme, toggleTheme } = useTheme();
@@ -22,7 +33,7 @@ function App() {
   }, [view]);
 
   const locations = useMemo(() => {
-    const uniqueLocations = new Set(listings.map((l) => l.location));
+    const uniqueLocations = new Set(listings.map((listing) => locationFilterValue(listing.location)));
     return Array.from(uniqueLocations).sort();
   }, [listings]);
 
@@ -39,7 +50,7 @@ function App() {
     }
 
     if (selectedLocation !== 'all') {
-      result = result.filter((listing) => listing.location === selectedLocation);
+      result = result.filter((listing) => locationFilterValue(listing.location) === selectedLocation);
     }
 
     result.sort((a, b) => {
