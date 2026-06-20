@@ -89,6 +89,11 @@ function App() {
             sortBy={sortBy}
             onSortChange={setSortBy}
           />
+          {selectedPlatform === 'Facebook' && (
+            <p className="source-note">
+              Facebook only shows a limited public preview here. Sign in to Facebook to view more posts from the group.
+            </p>
+          )}
           <div className="results-count">
             {filteredAndSortedListings.length} listings found
           </div>

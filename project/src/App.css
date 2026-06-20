@@ -210,6 +210,16 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23b2b8c0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 }
 
+.source-note {
+  margin: -8px 0 20px;
+  padding: 10px 12px;
+  border-left: 3px solid var(--trust-warn-ink);
+  background: var(--trust-warn-bg);
+  color: var(--trust-warn-ink);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 14px;
+}
+
 /* Results Count */
 .results-count {
   font-size: 14px;
