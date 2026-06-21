@@ -4,17 +4,22 @@ import generatedListings from './data/generatedListings.json';
 import Header, { type View } from './components/Header';
 import Home from './components/Home';
 import FilterBar from './components/FilterBar';
+import SearchBar from './components/SearchBar';
 import ListingGrid from './components/ListingGrid';
-import { useTheme } from './hooks/useTheme';
+import MapView from './components/MapView';
 import { northeasternScore } from './utils/northeastern';
+import { matchesSearch } from './utils/search';
 import './App.css';
+
+type ResultsView = 'grid' | 'map';
 
 function App() {
   const [view, setView] = useState<View>('home');
-  const { theme, toggleTheme } = useTheme();
   const [selectedPlatform, setSelectedPlatform] = useState<ListingPlatform | 'all'>('all');
   const [selectedLocation, setSelectedLocation] = useState('all');
   const [sortBy, setSortBy] = useState<SortOption>('date-desc');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [resultsView, setResultsView] = useState<ResultsView>('grid');
   const listings = generatedListings as Listing[];
 
   useEffect(() => {
@@ -42,6 +47,10 @@ function App() {
       result = result.filter((listing) => listing.location === selectedLocation);
     }
 
+    if (searchQuery.trim()) {
+      result = result.filter((listing) => matchesSearch(listing, searchQuery));
+    }
+
     result.sort((a, b) => {
       // Northeastern listings/asks rank first, other Boston schools last; the
       // chosen sort then orders listings within each relevance tier.
@@ -65,20 +74,16 @@ function App() {
     });
 
     return result;
-  }, [listings, selectedPlatform, selectedLocation, sortBy]);
+  }, [listings, selectedPlatform, selectedLocation, searchQuery, sortBy]);
 
   return (
     <div className="app">
-      <Header
-        view={view}
-        onNavigate={setView}
-        theme={theme}
-        onToggleTheme={toggleTheme}
-      />
+      <Header view={view} onNavigate={setView} />
       {view === 'home' ? (
         <Home listings={listings} onBrowse={() => setView('browse')} />
       ) : (
         <main className="main-content">
+          <SearchBar value={searchQuery} onChange={setSearchQuery} />
           <FilterBar
             selectedPlatform={selectedPlatform}
             onPlatformChange={setSelectedPlatform}
@@ -89,10 +94,34 @@ function App() {
             sortBy={sortBy}
             onSortChange={setSortBy}
           />
-          <div className="results-count">
-            {filteredAndSortedListings.length} listings found
+          <div className="results-bar">
+            <div className="results-count">
+              {filteredAndSortedListings.length} listings found
+            </div>
+            <div className="view-toggle" role="group" aria-label="Results view">
+              <button
+                type="button"
+                className={`view-toggle-btn ${resultsView === 'grid' ? 'active' : ''}`}
+                onClick={() => setResultsView('grid')}
+                aria-pressed={resultsView === 'grid'}
+              >
+                Grid
+              </button>
+              <button
+                type="button"
+                className={`view-toggle-btn ${resultsView === 'map' ? 'active' : ''}`}
+                onClick={() => setResultsView('map')}
+                aria-pressed={resultsView === 'map'}
+              >
+                Map
+              </button>
+            </div>
           </div>
-          <ListingGrid listings={filteredAndSortedListings} />
+          {resultsView === 'grid' ? (
+            <ListingGrid listings={filteredAndSortedListings} />
+          ) : (
+            <MapView listings={filteredAndSortedListings} />
+          )}
         </main>
       )}
       <footer className="footer">

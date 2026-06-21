@@ -61,6 +61,58 @@ If sources are slower or rate-limited, daily is usually enough:
 - cron: "0 9 * * *"
 ```
 
+## Prototype updates
+
+1StopSublet is built iteratively around rounds of user testing with Northeastern
+students. Each phase responds to feedback from the previous round.
+
+### Phase 1 — Initial prototype
+
+The first build established the core idea and the no-backend architecture:
+
+- **Aggregated feed.** A Python scraper pipeline normalizes listings into a
+  single static JSON contract consumed by a Vite + React frontend; the first
+  live source was Reddit's r/NEU housing megathread.
+- **Scan-and-compare browsing.** A listing-card grid with platform, location,
+  and sort controls, plus source labels so students can see where each listing
+  came from.
+- **AI-assisted titles.** Optional OpenAI-generated listing titles at build
+  time, with scraper-generated fallbacks when no key is present.
+
+### Phase 2 — Look and relevance (from phase 1 feedback)
+
+Phase 1 testers wanted the tool to feel more trustworthy and more clearly
+Northeastern-focused, so this round added:
+
+- **A real landing page.** A home/hero page that explains what the tool does,
+  how it works, and how to read each source's trust level — replacing the bare
+  listing grid as the entry point.
+- **Northeastern-relevance ranking.** Listings on or near campus and tied to the
+  Northeastern community float to the top; listings tied to other Boston schools
+  rank lower.
+- **More sources.** Added SBLT, Subletr, and Northeastern off-campus housing
+  (aptsearch) scrapers alongside Reddit.
+- **Visual refresh + theming.** A redesigned, community-red interface with a
+  light/dark theme toggle.
+
+### Phase 3 — Search, map, and a calmer look (from phase 2 feedback)
+
+Phase 2 interviews surfaced four clear asks; this round delivers them:
+
+- **Search.** A search bar on the browse view that matches across neighborhood,
+  amenities, price, size, and platform, and filters both the grid and the map.
+- **Optional map view.** An Airbnb-style Leaflet + OpenStreetMap map you can
+  toggle on (it never replaces the grid), showing sublets relative to the
+  Northeastern campus and nearby MBTA stops. Because exact listing coordinates
+  can't be verified yet, it is an illustrative example: listings are grouped by
+  neighborhood and clearly labeled as approximate.
+- **One calmer theme.** Testers preferred a single consistent look over the
+  toggle, so the light/dark switch was removed in favor of one light theme with
+  alternating darker-fill sections (and lighter text) to add contrast and break
+  up the page.
+- **Home-page imagery.** A photographic hero banner reduces the empty white
+  space on the landing page.
+
 ## Future implementations
 
 1StopSublet is currently an independent, unofficial tool with no backend: it
