@@ -1,6 +1,17 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, type CSSProperties } from 'react';
 import type { Listing } from '../types/listing';
 import { isNortheastern } from '../utils/northeastern';
+
+// Resolve the hero photo if it has been added to src/assets. Using import.meta.glob
+// (instead of a static import) means the app still builds when the file is absent,
+// and the photo appears automatically once it is dropped in. Drop a file named
+// hero-skyline.{jpg,jpeg,png,webp} into src/assets/ to set the hero background.
+const heroImages = import.meta.glob('../assets/hero-skyline.{jpg,jpeg,png,webp}', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+});
+const heroUrl = Object.values(heroImages)[0] as string | undefined;
 
 interface HomeProps {
   listings: Listing[];
@@ -9,6 +20,9 @@ interface HomeProps {
 
 function Home({ listings, onBrowse }: HomeProps) {
   const [showListModal, setShowListModal] = useState(false);
+  const heroStyle = heroUrl
+    ? ({ '--hero-image': `url(${heroUrl})` } as CSSProperties)
+    : undefined;
 
   const stats = useMemo(() => {
     const sources = new Set(listings.map((listing) => listing.platform));
@@ -24,12 +38,12 @@ function Home({ listings, onBrowse }: HomeProps) {
 
   return (
     <main className="home">
-      <section className="hero">
+      <section className={`hero ${heroUrl ? 'hero-photo' : ''}`} style={heroStyle}>
         <p className="hero-eyebrow">For the Northeastern community</p>
         <h1 className="hero-title">Every Boston-area sublet, in one place.</h1>
         <p className="hero-mission">
           1StopSublet gathers short-term sublets from across the web and ranks them for
-          Northeastern students — so you can find a safe, simple place to live without
+          Northeastern students - so you can find a safe, simple place to live without
           checking ten different sites.
         </p>
         <div className="hero-actions">
@@ -88,7 +102,7 @@ function Home({ listings, onBrowse }: HomeProps) {
         </div>
       </section>
 
-      <section className="home-section trust-section">
+      <section className="home-section home-section-dark trust-section">
         <h2 className="home-section-title">Know who you are renting from</h2>
         <p className="home-section-lead">
           Not every listing is equal. We label each one by how much its source vets the
@@ -105,14 +119,14 @@ function Home({ listings, onBrowse }: HomeProps) {
           <article className="info-card">
             <span className="trust-badge trust-official">Official portal</span>
             <p>
-              From Northeastern&rsquo;s own off-campus housing portal — an official
+              From Northeastern&rsquo;s own off-campus housing portal - an official
               channel, though not peer-verified.
             </p>
           </article>
           <article className="info-card">
             <span className="trust-badge trust-unverified">Community post</span>
             <p>
-              From open boards like Reddit. Useful leads, but the poster is not verified —
+              From open boards like Reddit. Useful leads, but the poster is not verified -
               meet safely and confirm details.
             </p>
           </article>

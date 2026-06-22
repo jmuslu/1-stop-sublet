@@ -2,7 +2,7 @@ import type { Listing } from '../types/listing';
 
 // Signals that a listing is from / for the Northeastern community.
 const NEU_RE = /northeastern|huskies|husky|\bneu\b/i;
-// Neighborhoods on or next to NU's campus — relevant even when the poster is elsewhere.
+// Neighborhoods on or next to NU's campus - relevant even when the poster is elsewhere.
 const NEAR_NEU_RE =
   /mission hill|ruggles|roxbury crossing|\broxbury\b|fenway|symphony|huntington|columbus ave/i;
 // Other Boston-area schools we want ranked below Northeastern content.

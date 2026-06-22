@@ -1,5 +1,84 @@
 [
   {
+    "id": "neu-aptsearch-ocpwrn110k",
+    "title": "Super Nice Sublet Close to Campus - 5 min Walk",
+    "description": "Super Nice Sublet Close to Campus - 5 min Walk - Boston, MA, 02120 - $1,445 /Bedroom - 2 Month Lease - 0.16 miles to Northeastern - Shared housing",
+    "price": 1445,
+    "location": "Mission Hill, Boston, MA",
+    "bedrooms": 1,
+    "bathrooms": 1.0,
+    "platform": "NEU aptsearch",
+    "dateListed": "2026-06-21",
+    "imageUrl": "https://img.offcampusimages.com/soUDr75SH9756Bsw1p9HWlaBC8o=/330x440/left/top/smart/images/yhjzurvaljgmwreixmiuplgqnlz1d76mtv19kuq7mlg.jpeg",
+    "sourceUrl": "https://aptsearch.northeastern.edu/housing/property/super-nice-sublet-close-to-campus-5-min-walk/ocpwrn110k",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": null,
+    "sourceThreadTitle": null,
+    "sourceAuthor": null,
+    "sourceIntent": null,
+    "school": "Northeastern University",
+    "imageUrls": [
+      "https://img.offcampusimages.com/soUDr75SH9756Bsw1p9HWlaBC8o=/330x440/left/top/smart/images/yhjzurvaljgmwreixmiuplgqnlz1d76mtv19kuq7mlg.jpeg",
+      "https://img.offcampusimages.com/e6HOQnvryraW2oTaSDI6ul7hflE=/330x440/left/top/smart/images/p8_emaj17ahcgjvksrw_wac62nress6uoixmhppzyri.jpeg",
+      "https://img.offcampusimages.com/CTozdozAU-1S7wNAMw0Pk_e06I8=/660x440/left/top/smart/images/ringow_igt1bcpzaymvp7wkliaeq89of3razr6d_og4.jpeg",
+      "https://img.offcampusimages.com/Sl0Q4F1aKQsQHMo_hSidx7Zh8j4=/660x440/left/top/smart/images/qhf3__e0gnqtuqim35y1fwmwjsmz4ztkwpajjjqormo.jpeg",
+      "https://img.offcampusimages.com/NdeUS_LW6uaWn4aHuvvItCIuaj8=/660x440/left/top/smart/images/xxq5stqnbil1ibbohkvrqgwokwuz85ec_oaiiwc0ts8.jpeg",
+      "https://img.offcampusimages.com/fAyTh_gHXCcNOKXD_l9RgzI2ZYM=/330x440/left/top/smart/images/gkrbrd_ovd_mleowff5ri8z1rf90wslxvq2rvy0k_vw.jpeg"
+    ],
+    "availabilityLabel": "2 Month Lease",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Official portal",
+      "Sublet",
+      "Shared housing",
+      "Lease term"
+    ],
+    "amenities": [
+      "NEU aptsearch",
+      "Official portal",
+      "Sublet",
+      "Shared housing",
+      "Lease term",
+      "Bedroom"
+    ],
+    "extraCosts": []
+  },
+  {
+    "id": "reddit-oswgtir",
+    "title": "$550 housing lead near Allston",
+    "description": "\ud83c\udf1f PERMANENT ACCOMMODATION AVAILABLE FOR GIRLS \ud83c\udf1f \ud83d\udccd Gardner Street Apartments, Allston MA Looking for 1 or 2 girls to occupy a spacious separate living room in a 2 Bed / 1 Bath apartment \ud83c\udfe1 The hall is a spacious separate area. It can be taken as a private hall by 1 person or share...",
+    "price": 550,
+    "location": "Allston, Boston, MA",
+    "bedrooms": 2,
+    "bathrooms": 1.0,
+    "platform": "Reddit",
+    "dateListed": "2026-06-21",
+    "imageUrl": null,
+    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/oswgtir/",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": "r/NEU",
+    "sourceThreadTitle": "NEU Housing Megathread",
+    "sourceAuthor": "/u/GGD7920",
+    "sourceIntent": "offer",
+    "school": null,
+    "imageUrls": [],
+    "availabilityLabel": null,
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [],
+    "amenities": [
+      "Reddit",
+      "r/NEU",
+      "Laundry",
+      "Housing megathread"
+    ],
+    "extraCosts": [
+      "Fees mentioned"
+    ],
+    "roommatesTotal": 2
+  },
+  {
     "id": "facebook-d6c86cae62baff80",
     "title": "\ud83c\udfe1 Private Room Available in Jamaica Plain \u2013 Girls Only \ud83c\udfe1 \u2728 Move-in read...",
     "description": "\ud83c\udfe1 Private Room Available in Jamaica Plain \u2013 Girls Only \ud83c\udfe1 \u2728 Move-in ready private bedroom in a spacious 5 bed / 2 bath home \u2728 (Prefer Vegetarians/Eggetarians) \ud83d\udccd Location: 15 Pond St, Jamaica Plain, MA 02130 \ud83d\udecf\ufe0f About the Room & Home \u2022 Private bedroom with closet space \u2022 Located in a well-maintained 5-bedroom, 2-bath hou...",
@@ -700,6 +779,47 @@
     "extraCosts": []
   },
   {
+    "id": "neu-aptsearch-ocpb7kdj3c",
+    "title": "Room available in a 3BR/1BA Mission Hill apartment \u2014 ideal for students needing...",
+    "description": "Room available in a 3BR/1BA Mission Hill apartment \u2014 ideal for students needing... - 62 Calumet Street Apartment 3, Boston, MA, 02120 - $1,350 - $1,390 /Bedroom - 4 Month Lease - 0.81 miles to Northeastern - Shared housing",
+    "price": 1350,
+    "location": "Mission Hill, Boston, MA",
+    "bedrooms": 1,
+    "bathrooms": 1.0,
+    "platform": "NEU aptsearch",
+    "dateListed": "2026-06-08",
+    "imageUrl": "https://img.offcampusimages.com/s6XXwHWRbusj-hvjuJq_rJBWVos=/660x440/left/top/smart/images/9bwpzibhzubjsb6cyseirmmzci2cs6bdfwu17dqxedw.png",
+    "sourceUrl": "https://aptsearch.northeastern.edu/housing/property/room-available-in-a-3br-1ba-mission-hill-apartment-ideal-for-students-needing-fall-housing/ocpb7kdj3c",
+    "sourceVettedUsers": false,
+    "sourceSubreddit": null,
+    "sourceThreadTitle": null,
+    "sourceAuthor": null,
+    "sourceIntent": null,
+    "school": "Northeastern University",
+    "imageUrls": [
+      "https://img.offcampusimages.com/s6XXwHWRbusj-hvjuJq_rJBWVos=/660x440/left/top/smart/images/9bwpzibhzubjsb6cyseirmmzci2cs6bdfwu17dqxedw.png",
+      "https://img.offcampusimages.com/aLebi0fw5fd8Fsr7tp47ZwH4oJ8=/660x440/left/top/smart/images/nfvow9lq__ku7lx7t8xmflg8newhja214egz7_6gy2o.png"
+    ],
+    "availabilityLabel": "4 Month Lease",
+    "availableFrom": null,
+    "availableTo": null,
+    "termTags": [
+      "Official portal",
+      "Sublet",
+      "Shared housing",
+      "Lease term"
+    ],
+    "amenities": [
+      "NEU aptsearch",
+      "Official portal",
+      "Sublet",
+      "Shared housing",
+      "Lease term",
+      "Bedroom"
+    ],
+    "extraCosts": []
+  },
+  {
     "id": "neu-aptsearch-ocpdn8mfvl",
     "title": "Sublet for Apartment right next to Green Line/39 Bus/Walkable to NEU - July 1st...",
     "description": "Sublet for Apartment right next to Green Line/39 Bus/Walkable to NEU - July 1st... - 822 Huntington Avenue Apt 2, Boston, MA, 02115 - $1,285 /Bedroom - 2 Month Lease - 0.87 miles to Northeastern - Shared housing",
@@ -925,50 +1045,6 @@
       "https://img.offcampusimages.com/tF7K_qedB8oYItQi1vsnCNfrUjw=/330x440/left/top/smart/images/zn_v9qdbyfyapgkiyqxsocxffcx_pta11nipjo956po.jpeg"
     ],
     "availabilityLabel": "2 Month Lease",
-    "availableFrom": null,
-    "availableTo": null,
-    "termTags": [
-      "Official portal",
-      "Sublet",
-      "Shared housing",
-      "Lease term"
-    ],
-    "amenities": [
-      "NEU aptsearch",
-      "Official portal",
-      "Sublet",
-      "Shared housing",
-      "Lease term",
-      "Bedroom"
-    ],
-    "extraCosts": []
-  },
-  {
-    "id": "neu-aptsearch-ocpnm8r89q",
-    "title": "LightView",
-    "description": "LightView - 744 Columbus Ave, Roxbury Crossing, MA, 02120 - $1,600 /Bedroom - 1 Month Lease - 0.5 miles to Northeastern - Shared housing",
-    "price": 1600,
-    "location": "Roxbury Crossing, MA",
-    "bedrooms": 1,
-    "bathrooms": 1.0,
-    "platform": "NEU aptsearch",
-    "dateListed": "2026-06-05",
-    "imageUrl": "https://img.offcampusimages.com/Cng7VImYmDgPu6XLgXaSFjtgXHg=/660x440/left/top/smart/images/odxl0ut5k0_7hqkxzy7c1kboklg_gd7pfnoz5x4onga.jpeg",
-    "sourceUrl": "https://aptsearch.northeastern.edu/housing/property/lightview/ocpnm8r89q",
-    "sourceVettedUsers": false,
-    "sourceSubreddit": null,
-    "sourceThreadTitle": null,
-    "sourceAuthor": null,
-    "sourceIntent": null,
-    "school": "Northeastern University",
-    "imageUrls": [
-      "https://img.offcampusimages.com/Cng7VImYmDgPu6XLgXaSFjtgXHg=/660x440/left/top/smart/images/odxl0ut5k0_7hqkxzy7c1kboklg_gd7pfnoz5x4onga.jpeg",
-      "https://img.offcampusimages.com/oVV8m4NWCAG9tH2Kp0cj7XJU66E=/293x440/left/top/smart/images/rcsjlnlzsduym_7r7g8hks2pz8cokfbumwcsvxuyoj0.jpeg",
-      "https://img.offcampusimages.com/as-aoS035KsYs1_BIpOrVxJ8Nw4=/421x440/left/top/smart/images/q9bpqddoymuyz0oxel26uplq6h32_4skpk9woimbd0a.jpeg",
-      "https://img.offcampusimages.com/P8fxrXQMW1zxh66TUZOG7f24Btw=/330x440/left/top/smart/images/0deze2d2t1shbzva3zdhlmdlkhapjx_uqdumuvdg6bg.jpeg",
-      "https://img.offcampusimages.com/y6-fpcqusJ0CVHM2QHweioZ_3FI=/660x440/left/top/smart/images/rirvru0sr2zlgocb__74ofnmwukn0p4vnb2i04iltpk.jpeg"
-    ],
-    "availabilityLabel": "1 Month Lease",
     "availableFrom": null,
     "availableTo": null,
     "termTags": [
@@ -1552,40 +1628,6 @@
       "Housing megathread"
     ],
     "extraCosts": []
-  },
-  {
-    "id": "reddit-ooy8zn7",
-    "title": "$550 housing lead near Allston",
-    "description": "Permanent Accommodation available for Girls \ud83d\udccd Gardner Street Apartments, Allston MA Looking for 1 or 2 girls to occupy a spacious separate living room in a 2 Bed / 1 Bath apartment \ud83c\udfe1 The hall is a spacious separate area. It can be taken as a private hall by 1 person or shared by...",
-    "price": 550,
-    "location": "Allston, Boston, MA",
-    "bedrooms": 2,
-    "bathrooms": 1.0,
-    "platform": "Reddit",
-    "dateListed": "2026-05-31",
-    "imageUrl": null,
-    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/ooy8zn7/",
-    "sourceVettedUsers": false,
-    "sourceSubreddit": "r/NEU",
-    "sourceThreadTitle": "NEU Housing Megathread",
-    "sourceAuthor": "/u/GGD7920",
-    "sourceIntent": "offer",
-    "school": null,
-    "imageUrls": [],
-    "availabilityLabel": null,
-    "availableFrom": null,
-    "availableTo": null,
-    "termTags": [],
-    "amenities": [
-      "Reddit",
-      "r/NEU",
-      "Laundry",
-      "Housing megathread"
-    ],
-    "extraCosts": [
-      "Fees mentioned"
-    ],
-    "roommatesTotal": 2
   },
   {
     "id": "neu-aptsearch-ocp9y4ctm6",
@@ -2586,51 +2628,6 @@
     "extraCosts": [],
     "roommatesTotal": 2,
     "applianceNotes": "Available 2026-05-31 to 2026-08-01"
-  },
-  {
-    "id": "neu-aptsearch-ocpwrn110k",
-    "title": "Super Nice Sublet Close to Campus - 5 min Walk",
-    "description": "Super Nice Sublet Close to Campus - 5 min Walk - Boston, MA, 02120 - $1,445 /Bedroom - 2 Month Lease - 0.16 miles to Northeastern - Shared housing",
-    "price": 1445,
-    "location": "Mission Hill, Boston, MA",
-    "bedrooms": 1,
-    "bathrooms": 1.0,
-    "platform": "NEU aptsearch",
-    "dateListed": "2026-05-21",
-    "imageUrl": "https://img.offcampusimages.com/soUDr75SH9756Bsw1p9HWlaBC8o=/330x440/left/top/smart/images/yhjzurvaljgmwreixmiuplgqnlz1d76mtv19kuq7mlg.jpeg",
-    "sourceUrl": "https://aptsearch.northeastern.edu/housing/property/super-nice-sublet-close-to-campus-5-min-walk/ocpwrn110k",
-    "sourceVettedUsers": false,
-    "sourceSubreddit": null,
-    "sourceThreadTitle": null,
-    "sourceAuthor": null,
-    "sourceIntent": null,
-    "school": "Northeastern University",
-    "imageUrls": [
-      "https://img.offcampusimages.com/soUDr75SH9756Bsw1p9HWlaBC8o=/330x440/left/top/smart/images/yhjzurvaljgmwreixmiuplgqnlz1d76mtv19kuq7mlg.jpeg",
-      "https://img.offcampusimages.com/e6HOQnvryraW2oTaSDI6ul7hflE=/330x440/left/top/smart/images/p8_emaj17ahcgjvksrw_wac62nress6uoixmhppzyri.jpeg",
-      "https://img.offcampusimages.com/CTozdozAU-1S7wNAMw0Pk_e06I8=/660x440/left/top/smart/images/ringow_igt1bcpzaymvp7wkliaeq89of3razr6d_og4.jpeg",
-      "https://img.offcampusimages.com/Sl0Q4F1aKQsQHMo_hSidx7Zh8j4=/660x440/left/top/smart/images/qhf3__e0gnqtuqim35y1fwmwjsmz4ztkwpajjjqormo.jpeg",
-      "https://img.offcampusimages.com/NdeUS_LW6uaWn4aHuvvItCIuaj8=/660x440/left/top/smart/images/xxq5stqnbil1ibbohkvrqgwokwuz85ec_oaiiwc0ts8.jpeg",
-      "https://img.offcampusimages.com/fAyTh_gHXCcNOKXD_l9RgzI2ZYM=/330x440/left/top/smart/images/gkrbrd_ovd_mleowff5ri8z1rf90wslxvq2rvy0k_vw.jpeg"
-    ],
-    "availabilityLabel": "2 Month Lease",
-    "availableFrom": null,
-    "availableTo": null,
-    "termTags": [
-      "Official portal",
-      "Sublet",
-      "Shared housing",
-      "Lease term"
-    ],
-    "amenities": [
-      "NEU aptsearch",
-      "Official portal",
-      "Sublet",
-      "Shared housing",
-      "Lease term",
-      "Bedroom"
-    ],
-    "extraCosts": []
   },
   {
     "id": "subletr-6a0a2b252d68085c63b7d17b",
@@ -3838,119 +3835,6 @@
       "Utilities mentioned"
     ],
     "utilitiesNotes": "$1100 plus utilities per month."
-  },
-  {
-    "id": "reddit-ogdyc0s",
-    "title": "Subletting a small private bedroom in a 3B1B for SUMMER 1 (MAY-JUNE), F...",
-    "description": "Subletting a small private bedroom in a 3B1B for SUMMER 1 (MAY-JUNE), Flexible Move in/Move out as well! 3 minute walk from Brigham Circle green line and Stop-n-Shop, 15 minute walk to campus Rent is $950 (negotiable), fully equipped kitchen (gas stove, oven, dishwasher, fridge)...",
-    "price": 950,
-    "location": "Boston, MA",
-    "bedrooms": 1,
-    "bathrooms": 1,
-    "platform": "Reddit",
-    "dateListed": "2026-04-15",
-    "imageUrl": "https://preview.redd.it/e2oc3l4ppevg1.jpeg?width=3024&format=pjpg&auto=webp&s=ea8de5a61f7e88c2b5994526a42d442c394f68f9",
-    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/ogdyc0s/",
-    "sourceVettedUsers": false,
-    "sourceSubreddit": "r/NEU",
-    "sourceThreadTitle": "NEU Housing Megathread",
-    "sourceAuthor": "/u/Zestyclose_Sugar_600",
-    "sourceIntent": "offer",
-    "school": null,
-    "imageUrls": [
-      "https://preview.redd.it/e2oc3l4ppevg1.jpeg?width=3024&format=pjpg&auto=webp&s=ea8de5a61f7e88c2b5994526a42d442c394f68f9"
-    ],
-    "availabilityLabel": "MAY-JUNE",
-    "availableFrom": null,
-    "availableTo": null,
-    "termTags": [
-      "Summer 1"
-    ],
-    "amenities": [
-      "Reddit",
-      "r/NEU",
-      "Laundry",
-      "Co-op term",
-      "Sublet",
-      "Housing megathread"
-    ],
-    "extraCosts": []
-  },
-  {
-    "id": "reddit-ofz7yfu",
-    "title": "$1,475 housing lead near Mission Hill",
-    "description": "Hi! Looking for a girl to sublet my room for Summer 1 (May 1-June 30) in Mission Hill!! 1 room in a huge 2 story, 6 bed 2 bath apartment, $1475 + utilities , willing to negotiate -close to brigham circle green line stop, stop and shop, convenience store -can leave furniture or t...",
-    "price": 1475,
-    "location": "Mission Hill, Boston, MA",
-    "bedrooms": 6,
-    "bathrooms": 2.0,
-    "platform": "Reddit",
-    "dateListed": "2026-04-13",
-    "imageUrl": "https://preview.redd.it/9kkd6jcxuzug1.jpeg?width=3024&format=pjpg&auto=webp&s=80710d6e0d3093cd6343cfb1efda13203efa65a9",
-    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/ofz7yfu/",
-    "sourceVettedUsers": false,
-    "sourceSubreddit": "r/NEU",
-    "sourceThreadTitle": "NEU Housing Megathread",
-    "sourceAuthor": "/u/livieerose",
-    "sourceIntent": "offer",
-    "school": null,
-    "imageUrls": [
-      "https://preview.redd.it/9kkd6jcxuzug1.jpeg?width=3024&format=pjpg&auto=webp&s=80710d6e0d3093cd6343cfb1efda13203efa65a9"
-    ],
-    "availabilityLabel": "May 1-June 30",
-    "availableFrom": null,
-    "availableTo": null,
-    "termTags": [
-      "Summer 1"
-    ],
-    "amenities": [
-      "Reddit",
-      "r/NEU",
-      "Sublet",
-      "Housing megathread"
-    ],
-    "extraCosts": [
-      "Utilities mentioned"
-    ],
-    "utilitiesNotes": "1 room in a huge 2 story, 6 bed 2 bath apartment, $1475 + utilities , willing to negotiate -close to brigham circle green line stop, stop a..."
-  },
-  {
-    "id": "reddit-ofyvfy8",
-    "title": "My roommate and I are subletting our fully furnished 3B2B Lightview apa...",
-    "description": "Hi everyone! My roommate and I are subletting our fully furnished 3B2B Lightview apartment (Across the street from ISEC) for the entire summer (May-August)! Perks: - Very close to campus - Full sized bed - Amenities such as: living room, kitchen, laundry room, lounge, mail room,...",
-    "price": null,
-    "location": "Boston, MA",
-    "bedrooms": 1,
-    "bathrooms": 1,
-    "platform": "Reddit",
-    "dateListed": "2026-04-13",
-    "imageUrl": null,
-    "sourceUrl": "https://www.reddit.com/r/NEU/comments/11eo62e/megathread_please_post_all_housing_and_roommate/ofyvfy8/",
-    "sourceVettedUsers": false,
-    "sourceSubreddit": "r/NEU",
-    "sourceThreadTitle": "NEU Housing Megathread",
-    "sourceAuthor": "/u/Informal-Bat-3707",
-    "sourceIntent": "offer",
-    "school": null,
-    "imageUrls": [],
-    "availabilityLabel": "May-August",
-    "availableFrom": null,
-    "availableTo": null,
-    "termTags": [
-      "Summer"
-    ],
-    "amenities": [
-      "Reddit",
-      "r/NEU",
-      "Furnished",
-      "Laundry",
-      "Gym",
-      "Sublet"
-    ],
-    "extraCosts": [
-      "Utilities mentioned"
-    ],
-    "utilitiesNotes": "Perks: - Very close to campus - Full sized bed - Amenities such as: living room, kitchen, laundry room, lounge, mail room, gym, study areas..."
   },
   {
     "id": "neu-aptsearch-ocpcjljp2e",
